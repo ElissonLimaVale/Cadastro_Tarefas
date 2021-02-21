@@ -3,6 +3,18 @@
     padding: 0px;
     font-family: sans-serif;
 }
+
+#cadastrar_contato {
+    position: absolute;
+    width: 80%;
+    margin: 10%;
+    height: auto;
+    top: -600px;
+    border: 1px solid rgba(0,0,0,.3);
+    background-color: #fff;
+    transition: .5s;
+}
+
 @media screen and (min-width: 900px) {
     .title {
         color: rgba(0,0,0,.3);

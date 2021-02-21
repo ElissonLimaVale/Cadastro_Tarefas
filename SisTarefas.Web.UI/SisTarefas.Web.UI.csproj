@@ -177,6 +177,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Tarefas\Index.cshtml" />
     <Content Include="Views\Tarefas\Error.cshtml" />
+    <Content Include="Views\Tarefas\_PartialCadastrarContato.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

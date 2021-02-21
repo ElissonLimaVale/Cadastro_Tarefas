@@ -19,6 +19,10 @@ namespace SisTarefas.WebUI.Controllers
         {
             return View();
         }
+        public ActionResult PartialContato()
+        {
+            return PartialView("_PartialCadastrarContato");
+        }
 
         [HttpPost]
         public ActionResult Cadastrar(TarefaViewModel tarefa)
