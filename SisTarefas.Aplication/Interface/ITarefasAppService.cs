@@ -1,6 +1,6 @@
 ﻿using SisTarefas.Application.Models;
 
-namespace SisTarefas.Aplication.Interface
+namespace SisTarefas.Application.Interface
 {
     public interface ITarefasAppService
     {

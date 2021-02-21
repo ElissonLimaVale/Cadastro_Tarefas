@@ -27,7 +27,7 @@ namespace SisTarefas.Repository.Mapping
             this.Property(x => x.descricao).HasColumnType("VARCHAR");
             this.Property(x => x.observacoes).HasColumnType("VARCHAR");
             this.Property(x => x.contato).HasColumnType("VARCHAR");
-            this.Property(x => x.notificacoes).HasColumnType("INT");
+            //this.Property(x => x.notificacoes).HasColumnType("INT");
             
     }
         

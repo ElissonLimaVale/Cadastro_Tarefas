@@ -1,6 +1,6 @@
 ﻿
-using SisTarefas.Aplication.Interface;
-
+using SisTarefas.Application.Interface;
+using SisTarefas.Application.Models;
 using System.Web.Mvc;
 
 namespace SisTarefas.WebUI.Controllers
@@ -10,10 +10,10 @@ namespace SisTarefas.WebUI.Controllers
     {
         private readonly ITarefasAppService _appservice;
 
-        public TarefasController(ITarefasAppService appservice)
-        {
-            _appservice = appservice;
-        }
+        //public TarefasController(ITarefasAppService appservice)
+        //{
+        //    _appservice = appservice;
+        //}
 
         public ActionResult Index()
         {
@@ -21,9 +21,9 @@ namespace SisTarefas.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Cadastrar()
+        public ActionResult Cadastrar(TarefaViewModel tarefa)
         {
-            var response = new { data = true, message = "Cadastrado com sucesso!" };
+            var response = _appservice.Cadastrar(tarefa);
 
             return Json(response);
         }

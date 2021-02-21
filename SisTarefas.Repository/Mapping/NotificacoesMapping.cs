@@ -13,7 +13,7 @@ namespace SisTarefas.Repository.Mapping
 
             this.Property(x => x.id).HasColumnType("INT");
             this.Property(x => x.nome).HasColumnType("VARCHAR");
-            this.Property(x => x.tarefa).HasColumnType("INT");
+            //this.Property(x => x.tarefa).HasColumnType("VARCHAR");
             this.Property(x => x.data).HasColumnType("DATETIME");
             this.Property(x => x.response).HasColumnType("BIT");
 

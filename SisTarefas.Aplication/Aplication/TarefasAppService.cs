@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using SisTarefas.Aplication.Interface;
+using SisTarefas.Application.Interface;
 using SisTarefas.Application.Models;
 using SisTarefas.Domain.Base;
 using SisTarefas.Repository.Interface;
 
-namespace SisTarefas.Aplication
+namespace SisTarefas.Application
 {
     public class TarefasAppService: ITarefasAppService
     {

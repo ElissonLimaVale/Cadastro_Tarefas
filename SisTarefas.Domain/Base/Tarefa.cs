@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SisTarefas.Domain.Base
 {
@@ -15,6 +16,6 @@ namespace SisTarefas.Domain.Base
         public string descricao { get; set; }
         public string observacoes { get; set; }
         public string contato { get; set; }
-        public int notificacoes { get; set; }
+        public virtual ICollection<Notificacoes> notificacao { get; set; }
     }
 }

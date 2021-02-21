@@ -10,8 +10,9 @@ namespace SisTarefas.Domain.Base
     {
         public int id { get; set; }
         public string nome { get; set; }
-        public int tarefa { get; set; }
+        //public string tarefa { get; set; }
         public DateTime data { get; set; }
         public bool response { get; set; }
+        public virtual Tarefa Tarefa { get; set; }
     }
 }

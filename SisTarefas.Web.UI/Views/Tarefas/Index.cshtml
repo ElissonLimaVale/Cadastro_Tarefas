@@ -7,16 +7,102 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Cadastro de Tarefas</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href=""/>
+    <link href="~/Content/style/Global.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Content/scripts/Global.js"></script>
+    <script src="~/Content/scripts/home.js"></script>
 </head>
 <body>
-    <div class="">
-        <div class="">
-
+    <div class="widget-box">
+        <div class="widget-header">
+            <i class="widget-icon icon-bar"></i>
+            <h4 class="sub-title-top">Cadastro de Tarefas</h4>
         </div>
-        <div class="">
+        <div class="simple-header">
+            <h3 class="sub-title">Dados da tarefa</h3>
+        </div>
+        <div class="widget-body">
+            <div class="formulario">
 
+                <div class="form-content">
+                    <div class="input-form input-small">
+                        <label class="label-input">Data Conclusão Prevista</label>
+                        <input name="data_prevista" class="input" type="date" />
+                    </div>
+                    <div class="input-form input-small">
+                        <label class="label-input">Data de Conclusão</label>
+                        <input name="data_conclusao" class="input" type="date" />
+                    </div>
+                    <div class="input-form input-medio">
+                        <label class="label-input">Área</label>
+                        <input name="area" class="input" type="text" />
+                    </div>
+                    <div class="input-form input-small">
+                        <label class="label-input">Impacto</label>
+                        <input name="impacto" class="input" type="text" />
+                    </div>
+                </div>
+
+                <div class="form-content">
+                    <div class="input-form input-small">
+                        <label class="label-input">Status</label>
+                        <input name="status" class="input" type="text" />
+                    </div>
+                    <div class="input-form input-small">
+                        <label class="label-input">Origem</label>
+                        <input name="origem" class="input" type="text" />
+                    </div>
+                    <div class="input-form input-big">
+                        <label class="label-input">Responsavel</label>
+                        <input name="responsavel" class="input" type="text" />
+                    </div>
+                </div>
+
+                <div class="form-content">
+                    <div class="input-form input-big-area">
+                        <label class="label-input">Descrição</label>
+                        <textarea name="descricao" class="input" rows="3" cols="30"></textarea>
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div class="input-form input-big-area">
+                        <label class="label-input">Observações</label>
+                        <textarea name="observacoes" class="input" rows="3" cols="30"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="line"></div>
+            <div class="simple-header">
+                <h3 class="sub-title">Notificados</h3>
+            </div>
+            <div class="formulario-exec">
+                <div class="formulario">
+                    <div class="form-content">
+                        <div class="content-select">
+                            <select name="contato" class="input-select" >
+                                <option value="Selecionar">Seleconar um Contato</option>
+                            </select>
+                        </div>
+                        <div class="content-button">
+                            <button class="input button-add"><i class="btn save"></i>Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="form-content">
+                        <div class="content-select">
+                            <input class=" input input-medio"/>
+                        </div>
+                        <div class="content-button">
+                            <button class="input button-remove"><i class="btn remove"></i>Remover</button>
+                        </div>
+                    </div>
+                    <div class="form-save">
+                        <div class="" width="100%">
+                            <button class="button-save"><i class="btn add"></i>Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

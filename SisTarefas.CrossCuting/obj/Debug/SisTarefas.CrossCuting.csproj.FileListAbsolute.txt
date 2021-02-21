@@ -6,7 +6,6 @@ C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.CrossCuting\bin\Debug\SisTarefas.Cro
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.CrossCuting\bin\Debug\AutoMapper.dll
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.CrossCuting\bin\Debug\Dapper.dll
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.CrossCuting\bin\Debug\EntityFramework.dll
-C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.CrossCuting\bin\Debug\EntityFramework.SqlServer.dll
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.CrossCuting\bin\Debug\FluentValidation.dll
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.CrossCuting\bin\Debug\Ninject.dll
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.CrossCuting\bin\Debug\SisAtividades.dll
@@ -21,7 +20,6 @@ C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.CrossCuting\bin\Debug\SisTarefas.Rep
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.CrossCuting\bin\Debug\AutoMapper.xml
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.CrossCuting\bin\Debug\Dapper.xml
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.CrossCuting\bin\Debug\EntityFramework.xml
-C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.CrossCuting\bin\Debug\EntityFramework.SqlServer.xml
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.CrossCuting\bin\Debug\FluentValidation.xml
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.CrossCuting\bin\Debug\Ninject.xml
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.CrossCuting\obj\Debug\SisTarefas.CrossCuting.csproj.CopyComplete

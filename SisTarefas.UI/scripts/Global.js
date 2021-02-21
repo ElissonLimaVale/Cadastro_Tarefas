@@ -1,1 +1,0 @@
-﻿//Métodos genéricos de load
