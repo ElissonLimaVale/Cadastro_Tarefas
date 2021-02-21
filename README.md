@@ -3,9 +3,9 @@
 
 **Atividades de projeto:**
 
-- [ ] Criar modelo de banco de dados para aplicação
-- [ ] Aplcar design pattern MVC DDD
-- [ ] Criar models e espelhar com o banco para o Entity
+- [x]  Criar modelo de banco de dados para aplicação
+- [x]  Aplcar design pattern MVC DDD
+- [x]  Criar models e espelhar com o banco para o Entity
 - [ ] Desenvolver interface grafica com html, css, javascript puros
 - [ ] Aplicar crud para comunicação com o banco de dados
 - [ ] Desenvolver tela poup up com grafico de atividades concluidas
