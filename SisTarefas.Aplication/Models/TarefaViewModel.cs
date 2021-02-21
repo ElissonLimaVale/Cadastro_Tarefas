@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SisTarefas.Aplication.Models
+namespace SisTarefas.Application.Models
 {
     public class TarefaViewModel
     {
@@ -15,6 +15,7 @@ namespace SisTarefas.Aplication.Models
         public string descricao { get; set; }
         public string observacoes { get; set; }
         public string contato { get; set; }
+        public int notificacoes { get; set; }
 
     }
 }

@@ -66,6 +66,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\Contatos.cs" />
+    <Compile Include="Base\Notificacoes.cs" />
     <Compile Include="Base\Tarefa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

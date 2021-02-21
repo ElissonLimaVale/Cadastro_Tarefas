@@ -1,4 +1,4 @@
-﻿using SisTarefas.Aplication.Models;
+﻿using SisTarefas.Application.Models;
 
 namespace SisTarefas.Aplication.Interface
 {

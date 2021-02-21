@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using SisTarefas.Aplication.Models;
+using SisTarefas.Application.Models;
 using SisTarefas.Domain.Base;
 namespace SisTarefas.Aplication.AutoMapper
 {
@@ -12,6 +12,8 @@ namespace SisTarefas.Aplication.AutoMapper
         protected override void Configure()
         {
            Mapper.CreateMap<Tarefa, TarefaViewModel >();
+           Mapper.CreateMap<Contatos, ContatosViewModel >();
+           Mapper.CreateMap<Notificacoes, NotificacoesViewModel >();
         }
     }
 }

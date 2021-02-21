@@ -16,6 +16,7 @@ namespace SisTarefas.Repository.Mapping
 
             this.HasKey(x => x.id);
 
+            this.Property(x => x.id).HasColumnType("INT");
             this.Property(x => x.area).HasColumnType("VARCHAR");
             this.Property(x => x.data_conclusao).HasColumnType("DATETIME");
             this.Property(x => x.data_prevista).HasColumnType("DATETIME");
@@ -26,6 +27,7 @@ namespace SisTarefas.Repository.Mapping
             this.Property(x => x.descricao).HasColumnType("VARCHAR");
             this.Property(x => x.observacoes).HasColumnType("VARCHAR");
             this.Property(x => x.contato).HasColumnType("VARCHAR");
+            this.Property(x => x.notificacoes).HasColumnType("INT");
             
     }
         

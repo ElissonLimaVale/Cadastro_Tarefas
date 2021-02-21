@@ -6,35 +6,18 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>ola mundo</title>
+    <title>Cadastro de Tarefas</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <style>
-        #teste {
-            background-color: royalblue;
-            padding: 10px 25px;
-            border: none;
-            border-radius: 4px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href=""/>
 </head>
 <body>
-    <h1>Helo World</h1>
+    <div class="">
+        <div class="">
 
-    <button id="teste">Cadastrar</button>
+        </div>
+        <div class="">
 
-    <script>
-        $(document).ready(() => {
-            $("#teste").on("click", () => {
-                $.ajax({
-                    method: "Post",
-                    url: "../Tarefas/Cadastrar"
-                }).done((data) => {
-                    alert(data.message);
-                }).fail(() => {
-                    alert("Ops, ocorreu um erro inesperado durante a requisição");
-                });
-            });
-        })
-    </script>
+        </div>
+    </div>
 </body>
 </html>

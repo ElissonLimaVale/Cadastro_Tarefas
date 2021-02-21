@@ -63,6 +63,8 @@
     <Compile Include="Base\Conexao.cs" />
     <Compile Include="Context\CadastroTarefasContext.cs" />
     <Compile Include="Interface\ITarefaRepository.cs" />
+    <Compile Include="Mapping\ContatosMapping.cs" />
+    <Compile Include="Mapping\NotificacoesMapping.cs" />
     <Compile Include="Mapping\TarefasMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\TarefaRepository.cs" />

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using SisTarefas.Aplication.Interface;
-using SisTarefas.Aplication.Models;
+using SisTarefas.Application.Models;
 using SisTarefas.Domain.Base;
 using SisTarefas.Repository.Interface;
 
