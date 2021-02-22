@@ -53,7 +53,7 @@
         height: 100%;
         width: 5%;
         float: left;
-        /*background-image: url('~/Content/image/');*/
+        background: url('~/Content/image/icon-folha.png') no-repeat;
     }
 
     .widget-body {
@@ -186,10 +186,11 @@
 
     .btn {
         position: relative;
+        top: -50px
     }
 
     .save {
-        /*background: url('~/Content/image/');*/
+        background: url('~/Content/image/projthis-success.png');
     }
 
     .formulario-exec {

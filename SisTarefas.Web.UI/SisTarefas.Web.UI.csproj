@@ -147,6 +147,21 @@
     <Content Include="Content\FrameWorks\bootstrap-theme.min.css" />
     <Content Include="Content\FrameWorks\bootstrap.css" />
     <Content Include="Content\FrameWorks\bootstrap.min.css" />
+    <Content Include="Content\image\icon-checklist.jpg" />
+    <Content Include="Content\image\icon-checklist1.png" />
+    <Content Include="Content\image\icon-folha.png" />
+    <Content Include="Content\image\icon-grafic.png" />
+    <Content Include="Content\image\icon-grafic1.jpg" />
+    <Content Include="Content\image\icon-grafic2.png" />
+    <Content Include="Content\image\icon-lixeira.png" />
+    <Content Include="Content\image\icon-seta1.png" />
+    <Content Include="Content\image\icon-tela-show.png" />
+    <Content Include="Content\image\menu8.jpg" />
+    <Content Include="Content\image\projthis-error.png" />
+    <Content Include="Content\image\projthis-error1.png" />
+    <Content Include="Content\image\projthis-success.png" />
+    <Content Include="Content\image\projthis-warning.png" />
+    <Content Include="Content\image\projthis-warning1.png" />
     <Content Include="Content\scripts\home.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -181,7 +196,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
