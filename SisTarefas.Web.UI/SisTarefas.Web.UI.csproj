@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.9.5.1\lib\net461\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Ninject, Version=3.3.3.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.3\lib\net45\Ninject.dll</HintPath>
@@ -140,6 +143,9 @@
     <Compile Include="Models\ContatosViewModel.cs" />
     <Compile Include="Models\NotificacoesViewModel.cs" />
     <Compile Include="Models\TarefaViewModel.cs" />
+    <Compile Include="Models\Validation\Contato.cs" />
+    <Compile Include="Models\Validation\Notificacao.cs" />
+    <Compile Include="Models\Validation\Tarefas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -147,21 +153,19 @@
     <Content Include="Content\FrameWorks\bootstrap-theme.min.css" />
     <Content Include="Content\FrameWorks\bootstrap.css" />
     <Content Include="Content\FrameWorks\bootstrap.min.css" />
-    <Content Include="Content\image\icon-checklist.jpg" />
-    <Content Include="Content\image\icon-checklist1.png" />
-    <Content Include="Content\image\icon-folha.png" />
-    <Content Include="Content\image\icon-grafic.png" />
-    <Content Include="Content\image\icon-grafic1.jpg" />
-    <Content Include="Content\image\icon-grafic2.png" />
+    <Content Include="Content\image\icon-add.png" />
+    <Content Include="Content\image\icon-ckecklist.png" />
+    <Content Include="Content\image\icon-fechar.png" />
     <Content Include="Content\image\icon-lixeira.png" />
     <Content Include="Content\image\icon-seta1.png" />
-    <Content Include="Content\image\icon-tela-show.png" />
+    <Content Include="Content\image\lixeira.png" />
     <Content Include="Content\image\menu8.jpg" />
     <Content Include="Content\image\projthis-error.png" />
     <Content Include="Content\image\projthis-error1.png" />
     <Content Include="Content\image\projthis-success.png" />
     <Content Include="Content\image\projthis-warning.png" />
     <Content Include="Content\image\projthis-warning1.png" />
+    <Content Include="Content\image\success-button.png" />
     <Content Include="Content\scripts\home.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

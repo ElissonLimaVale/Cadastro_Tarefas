@@ -107,3 +107,5 @@ C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Web.UI\bin\Ninject.Web.Common.WebHos
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Web.UI\bin\WebActivatorEx.dll
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Web.UI\bin\Ninject.Web.Common.xml
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Web.UI\bin\Ninject.Web.Common.WebHost.xml
+C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Web.UI\bin\FluentValidation.dll
+C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Web.UI\bin\FluentValidation.xml

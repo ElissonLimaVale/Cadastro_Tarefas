@@ -5,17 +5,23 @@
 }
 
 #cadastrar_contato {
-    position: absolute;
+    position: fixed;
     width: 80%;
     margin: 10%;
     height: auto;
     top: -600px;
     border: 1px solid rgba(0,0,0,.3);
     background-color: #fff;
-    transition: .5s;
+    transition: .4s;
 }
 
 @media screen and (min-width: 900px) {
+
+    /*#cadastrar {
+        margin-top: 15px;
+        margin-right: -15px;
+    }*/
+
     .title {
         color: rgba(0,0,0,.3);
         font-size: 2vw;
@@ -50,10 +56,50 @@
     }
 
     .widget-icon {
-        height: 100%;
-        width: 5%;
+        height: 20px;
+        width: 20px;
         float: left;
-        background: url('~/Content/image/icon-folha.png') no-repeat;
+        background: url('../image/icon-ckecklist.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
+        margin-right: 5px;
+    }
+    .widget-icon-right {
+        height: 20px;
+        width: 20px;
+        float: right;
+        margin-right: 10px;
+    }
+
+    .icone-checklist {
+        background: url('../image/icon-ckecklist.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
+
+    }
+    .icone-fechar {
+        background: url('../image/icon-fechar.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
+        cursor: pointer;
+    }
+    .icone-success {
+        background: url('../image/success-button.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
+        cursor: pointer;
+    }
+    .icone-deletar {
+        background: url('../image/lixeira.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
+        cursor: pointer;
+    }
+    .icone-add {
+        background: url('../image/icon-add.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
+        cursor: pointer;
     }
 
     .widget-body {
@@ -82,8 +128,8 @@
     }
 
     .input {
-        width: 100%;
-        padding: 8px 12px;
+        width: 92%;
+        padding: 8px 4%;
         border: 1px solid rgba(0,0,0,.2);
         border-radius: 2px;
         outline: 0;
@@ -105,19 +151,19 @@
     }
 
     .input-small {
-        width: 16%;
+        width: 18%;
     }
 
     .input-medio {
-        width: 36%;
+        width: 38%;
     }
 
     .input-big {
-        width: 55%;
+        width: 56%;
     }
 
     .input-big-area {
-        width: 92.8%;
+        width: 100%;
     }
 
     .label-input {
@@ -165,16 +211,17 @@
     }
 
     .button-save {
-        position: relative;
-        right: 1%;
         font-weight: bold;
         color: #fff;
         background-color: #25a2cf;
         border: none;
-        border-radius: 2px;
-        padding: 8px 40px;
-        margin: 5px;
         cursor: pointer;
+    }
+    .button {
+        transition: .2s;
+    }
+    .button:active {
+        margin-top: 2px;
     }
 
     .form-save {
@@ -186,13 +233,18 @@
 
     .btn {
         position: relative;
-        top: -50px
+        top: 8px;
+        left: 15%;
+        width: 18px;
+        height: 18px;
     }
-
-    .save {
-        background: url('~/Content/image/projthis-success.png');
+    
+    /*.save {
+        background: url('../image/projthis-success.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
     }
-
+*/
     .formulario-exec {
         width: 100%;
         background-color: #efefef;
@@ -230,7 +282,7 @@
 
     .notific-error .icon {
         margin-left: 5px;
-        background: url('../imagens/projthis-error1.png') no-repeat;
+        background: url('../image/projthis-error1.png') no-repeat;
         background-position: 50%;
         background-size: 100%;
         width: 50px;
@@ -258,7 +310,7 @@
 
     .notific-success .icon {
         margin-left: 5px;
-        background: url('../imagens/projthis-success.png') no-repeat;
+        background: url('../image/projthis-success.png') no-repeat;
         background-position: 50%;
         background-size: 100%;
         width: 50px;
@@ -286,7 +338,7 @@
 
     .notific-warning .icon {
         margin-left: 5px;
-        background: url('../imagens/projthis-warning1.png') no-repeat;
+        background: url('../image/projthis-warning1.png') no-repeat;
         background-position: 50%;
         background-size: 100%;
         width: 50px;
@@ -342,10 +394,55 @@
     }
 
     .widget-icon {
-        height: 100%;
-        width: 5%;
+        height: 20px;
+        width: 20px;
         float: left;
-        /*background-image: url('~/Content/image/');*/
+        background: url('../image/icon-ckecklist.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
+        margin-right: 5px;
+    }
+
+    .widget-icon-right {
+        height: 20px;
+        width: 20px;
+        float: right;
+        margin-right: 10px;
+        margin-top: -5px;
+    }
+
+    .icone-checklist {
+        background: url('../image/icon-ckecklist.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
+    }
+
+    .icone-fechar {
+        background: url('../image/icon-fechar.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
+        cursor: pointer;
+    }
+
+    .icone-success {
+        background: url('../image/success-button.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
+        cursor: pointer;
+    }
+
+    .icone-deletar {
+        background: url('../image/lixeira.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
+        cursor: pointer;
+    }
+
+    .icone-add {
+        background: url('../image/icon-add.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
+        cursor: pointer;
     }
 
     .widget-body {
@@ -458,14 +555,10 @@
     }
 
     .button-save {
-        position: relative;
-        right: 1%;
         font-weight: bold;
         color: #fff;
         background-color: #25a2cf;
         border: none;
-        padding: 8px 40px;
-        margin: 5px;
         cursor: pointer;
     }
 
@@ -478,6 +571,10 @@
 
     .btn {
         position: relative;
+        top: 8px;
+        left: 15%;
+        width: 18px;
+        height: 18px;
     }
 
     .save {
@@ -521,7 +618,7 @@
 
     .notific-error .icon {
         margin-left: 5px;
-        background: url('../imagens/projthis-error1.png') no-repeat;
+        background: url('../image/projthis-error1.png') no-repeat;
         background-position: 50%;
         background-size: 100%;
         width: 50px;
@@ -549,7 +646,7 @@
 
     .notific-success .icon {
         margin-left: 5px;
-        background: url('../imagens/projthis-success.png') no-repeat;
+        background: url('../image/projthis-success.png') no-repeat;
         background-position: 50%;
         background-size: 100%;
         width: 50px;
@@ -577,7 +674,7 @@
 
     .notific-warning .icon {
         margin-left: 5px;
-        background: url('../imagens/projthis-warning1.png') no-repeat;
+        background: url('../image/projthis-warning1.png') no-repeat;
         background-position: 50%;
         background-size: 100%;
         width: 50px;

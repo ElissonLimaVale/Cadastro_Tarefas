@@ -26,3 +26,5 @@ C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Repository\obj\Debug\SisTarefas.Repo
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Repository\obj\Debug\SisTarefas.Repository.pdb
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Repository\bin\Debug\Ninject.dll
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Repository\bin\Debug\Ninject.xml
+C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Repository\bin\Debug\FluentValidation.dll
+C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Repository\bin\Debug\FluentValidation.xml
