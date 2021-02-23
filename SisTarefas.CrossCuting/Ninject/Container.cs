@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using CommonServiceLocator;
+using Ninject;
 
 namespace SisTarefas.CrossCuting.Ninject
 {
@@ -13,5 +14,7 @@ namespace SisTarefas.CrossCuting.Ninject
         {
             return new StandardKernel(new NinjectModulo());
         }
+
+        public IKernel Kernel { get; private set; }
     }
 }

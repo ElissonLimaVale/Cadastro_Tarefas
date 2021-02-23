@@ -15,7 +15,6 @@ C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\bin\Debug\SisAtividades.p
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\bin\Debug\AutoMapper.dll
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\bin\Debug\Dapper.dll
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\bin\Debug\EntityFramework.dll
-C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\bin\Debug\EntityFramework.SqlServer.dll
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\bin\Debug\FluentValidation.dll
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\bin\Debug\Ninject.dll
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\bin\Debug\SisTarefas.Domain.dll
@@ -27,7 +26,6 @@ C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\bin\Debug\SisTarefas.Repo
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\bin\Debug\AutoMapper.xml
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\bin\Debug\Dapper.xml
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\bin\Debug\EntityFramework.xml
-C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\bin\Debug\EntityFramework.SqlServer.xml
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\bin\Debug\FluentValidation.xml
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\bin\Debug\Ninject.xml
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\obj\Debug\SisTarefas.Aplication.csprojAssemblyReference.cache
@@ -35,3 +33,5 @@ C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\obj\Debug\SisTarefas.Apli
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\obj\Debug\SisTarefas.Aplication.csproj.CopyComplete
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\obj\Debug\SisAtividades.dll
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\obj\Debug\SisAtividades.pdb
+C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\bin\Debug\EntityFramework.SqlServer.dll
+C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Aplication\bin\Debug\EntityFramework.SqlServer.xml

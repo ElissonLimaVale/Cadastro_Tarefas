@@ -223,7 +223,19 @@
     .button:active {
         margin-top: 2px;
     }
-
+    /*.btnfixed {
+        position: fixed;
+        bottom: 50px;
+        left: 50px;
+    }*/
+    .btn-fix {
+        font-weight: bold;
+        color: #fff;
+        background-color: #25a2cf;
+        border: none;
+        cursor: pointer;
+        padding: 8px 40px;
+    }
     .form-save {
         width: 100%;
         display: flex;

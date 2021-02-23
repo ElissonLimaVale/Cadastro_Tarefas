@@ -1,6 +1,8 @@
 ﻿@{
     Layout = null;
+    List<string> contatos = ViewBag.Contatos;
 }
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,34 +31,34 @@
 
                 <div class="form-content">
                     <div class="input-form input-small">
-                        <label class="label-input">Data Conclusão Prevista</label>
+                        <label class="label-input">Data Conclusão Prevista*</label>
                         <input name="data_prevista" class="input" type="date" />
                     </div>
                     <div class="input-form input-small">
-                        <label class="label-input">Data de Conclusão</label>
+                        <label class="label-input">Data de Conclusão*</label>
                         <input name="data_conclusao" class="input" type="date" />
                     </div>
                     <div class="input-form input-medio">
-                        <label class="label-input">Área</label>
+                        <label class="label-input">Área*</label>
                         <input name="area" class="input" type="text" />
                     </div>
                     <div class="input-form input-small">
-                        <label class="label-input">Impacto</label>
+                        <label class="label-input">Impacto*</label>
                         <input name="impacto" class="input" type="text" />
                     </div>
                 </div>
 
                 <div class="form-content">
                     <div class="input-form input-small">
-                        <label class="label-input">Status</label>
+                        <label class="label-input">Status*</label>
                         <input name="status" class="input" type="text" />
                     </div>
                     <div class="input-form input-small">
-                        <label class="label-input">Origem</label>
+                        <label class="label-input">Origem*</label>
                         <input name="origem" class="input" type="text" />
                     </div>
                     <div class="input-form input-big">
-                        <label class="label-input">Responsavel</label>
+                        <label class="label-input">Responsavel*</label>
                         <input name="responsavel" class="input" type="text" />
                     </div>
                 </div>
@@ -78,42 +80,53 @@
             <div class="line"></div>
             <div class="simple-header">
                 <h3 class="sub-title">Notificados</h3>
+                <div class="content-button" style="border: none;float: left;margin: -40px 100px;">
+                    <span class="btn icone-add"></span>
+                    <button id="adicionar_contato" class="button-add input">Cadastrar</button>
+                </div>
             </div>
             <div class="formulario-exec">
                 <div class="formulario">
                     <div class="form-content">
                         <div class="content-select">
-                            <select name="contato" class="input-select" >
+                            <select id="select-contato" name="contato" class="input-select">
                                 <option value="Selecionar">Seleconar um Contato</option>
+                                @{
+                                    foreach (string contato in contatos)
+                                    {
+                                        <option value="@contato">@contato</option>
+                                    }
+                                }
                             </select>
                         </div>
                         <div class="content-button">
                             <span class="btn icone-add"></span>
-                            <button id="adicionar_contato" class="input button-add button">Adicionar</button>
+                            <button id="adicionar-contato" class="input button-add button">Adicionar</button>
                         </div>
                     </div>
                     <div class="form-content">
                         <div class="content-select">
-                            <input class=" input input-medio"/>
+                            <input name="add-contato-value" class=" input input-medio"/>
                         </div>
                         <div class="content-button">
                             <span class="btn icone-deletar"></span>
-                            <button class="input button-remove button">Remover</button>
+                            <button id="remover-contato" class="input button-remove button">Remover</button>
                         </div>
                     </div>
                     <div class="form-content">
                         <div class="content-select" style="border: none;">
-                            
+
                         </div>
                         <div class="content-button">
                             <span class="btn icone-success"></span>
-                            <button class="input button-save button">Salvar</button>
+                            <button id="salvar" class="input button-save button">Salvar</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div id="cadastrar_contato">
         @Html.Partial("_PartialCadastrarContato")
     </div>

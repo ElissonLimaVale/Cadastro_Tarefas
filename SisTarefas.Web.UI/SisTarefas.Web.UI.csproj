@@ -140,12 +140,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ContatosViewModel.cs" />
-    <Compile Include="Models\NotificacoesViewModel.cs" />
-    <Compile Include="Models\TarefaViewModel.cs" />
-    <Compile Include="Models\Validation\Contato.cs" />
-    <Compile Include="Models\Validation\Notificacao.cs" />
-    <Compile Include="Models\Validation\Tarefas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +194,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\Validation\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
