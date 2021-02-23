@@ -6,6 +6,6 @@
 - [x]  Criar modelo de banco de dados para aplicação
 - [x]  Aplcar design pattern MVC DDD
 - [x]  Criar models e espelhar com o banco para o Entity
-- [ ] Desenvolver interface grafica com html, css, javascript puros
-- [ ] Aplicar crud para comunicação com o banco de dados
+- [x] Desenvolver interface grafica com html, css, javascript puros
+- [x] Aplicar crud para comunicação com o banco de dados
 - [ ] Desenvolver tela poup up com grafico de atividades concluidas
