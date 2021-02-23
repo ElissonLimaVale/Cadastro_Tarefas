@@ -83,6 +83,12 @@
         background-size: 100%;
         cursor: pointer;
     }
+    .icone-notific {
+        background: url('../image/notifica.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
+        cursor: pointer;
+    }
     .icone-success {
         background: url('../image/success-button.png') no-repeat;
         background-position: 50%;
@@ -431,6 +437,12 @@
 
     .icone-fechar {
         background: url('../image/icon-fechar.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
+        cursor: pointer;
+    }
+    .icone-notific {
+        background: url('../image/notifica.png') no-repeat;
         background-position: 50%;
         background-size: 100%;
         cursor: pointer;

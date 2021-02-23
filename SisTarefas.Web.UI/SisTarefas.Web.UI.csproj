@@ -154,6 +154,7 @@
     <Content Include="Content\image\icon-seta1.png" />
     <Content Include="Content\image\lixeira.png" />
     <Content Include="Content\image\menu8.jpg" />
+    <Content Include="Content\image\notifica.png" />
     <Content Include="Content\image\projthis-error.png" />
     <Content Include="Content\image\projthis-error1.png" />
     <Content Include="Content\image\projthis-success.png" />
