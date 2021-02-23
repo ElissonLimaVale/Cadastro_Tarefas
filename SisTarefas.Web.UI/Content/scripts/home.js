@@ -73,8 +73,8 @@
         tarefa.status = $("input[name=status]").val();
         tarefa.origem = $("input[name=origem]").val();
         tarefa.responsavel = $("input[name=responsavel]").val();
-        tarefa.descricao = $("input[name=descricao]").val();
-        tarefa.observacoes = $("input[name=observacoes]").val();
+        tarefa.descricao = $("textarea[name=descricao]").val();
+        tarefa.observacoes = $("textarea[name=observacoes]").val();
         tarefa.contato = $("input[name=add-contato-value]").val();
         tarefa.notificacao = $("input[name=notificacao]").val();
 
