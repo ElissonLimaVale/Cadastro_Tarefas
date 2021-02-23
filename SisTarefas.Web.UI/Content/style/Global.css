@@ -87,7 +87,14 @@
         background: url('../image/notifica.png') no-repeat;
         background-position: 50%;
         background-size: 100%;
+        margin-right: 15px;
         cursor: pointer;
+        transition: .2s;
+    }
+    .notific-true {
+        background: url('../image/notifica-true.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
     }
     .icone-success {
         background: url('../image/success-button.png') no-repeat;

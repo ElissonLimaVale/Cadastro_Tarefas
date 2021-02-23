@@ -39,6 +39,24 @@
                 $(".notific-warning").hide();
             }, 4000);
         }
+    },
+
+    //Notificações de Tarefas
+    notification = {
+        action: null,
+
+        Start: (temp) => {
+            this.action = setInterval(() => {
+                $("#notific-tarefa").addClass("notific-true");
+                setTimeout(() => {
+                    $("#notific-tarefa").removeClass("notific-true");
+                }, temp / 2);
+            }, temp);
+        },
+        Stop: () => {
+            $("#notific-tarefa").removeClass("notific-true");
+            dele this.action;
+        }
     };
 
 

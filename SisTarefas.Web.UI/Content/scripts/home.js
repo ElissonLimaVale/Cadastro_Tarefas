@@ -1,23 +1,25 @@
 ﻿$(document).ready(() => {
+    notification.Start(1200);
+    setTimeout(() => { notification.Stop(); }, 5000);
     // Objeto Contato 
     var contato = {
-        nome: "",
-        email: "",
-        telefone: ""
+        nome: null,
+        email: null,
+        telefone: null
     },
     //Objeto tarefa
     tarefa = {
-        data_prevista: "",
-        data_conclusao: "",
-        area: "",
-        impacto: "",
-        status: "",
-        origem: "",
-        responsavel: "",
-        descricao: "",
-        observacoes: "",
-        contato: "",
-        notificacao: ""
+        data_prevista: null,
+        data_conclusao: null,
+        area: null,
+        impacto: null,
+        status: null,
+        origem: null,
+        responsavel: null,
+        descricao: null,
+        observacoes: null,
+        contato: null,
+        notificacao: null
     },
     //Modal de cadastro de contato
     ModalCadastro = {

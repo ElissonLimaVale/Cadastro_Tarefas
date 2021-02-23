@@ -12,10 +12,20 @@ namespace SisTarefas.WebUI.Controllers
     public class TarefasController : Controller
     {
         private readonly ITarefasAppService _appservice;
+        private readonly TarefaValidator _tarefa;
+        private readonly ContatoValidator _contato;
+        private readonly NotificacaoValidator _notific;
 
-        public TarefasController(ITarefasAppService appservice)
+        public TarefasController(ITarefasAppService appservice, 
+                                TarefaValidator tarefa,
+                                ContatoValidator contato,
+                                NotificacaoValidator notific
+            )
         {
             _appservice = appservice;
+            _tarefa = tarefa;
+            _contato = contato;
+            _notific = notific;
         }
 
         public ActionResult Index()
@@ -31,23 +41,30 @@ namespace SisTarefas.WebUI.Controllers
         [HttpPost]
         public ActionResult CadastrarTarefa(TarefaViewModel tarefa)
         {
-            var response = _appservice.Cadastrar(tarefa);
-
+            //FluentValidation
+            ValidationResult result = _tarefa.Validate(tarefa);
+            
+            dynamic response = result.IsValid ? _appservice.Cadastrar(tarefa) : new { data = false, message = result.ToString("") };
+            
             return Json(response);
         }
 
         public ActionResult CadastrarContato(ContatosViewModel contato)
         {
-            //ValidationResult validate = new ContatoValidator();
+            //FluentValidation
+            ValidationResult result = _contato.Validate(contato);
 
-            var response = _appservice.CadastrarContato(contato);
-
+            dynamic response = result.IsValid ? _appservice.CadastrarContato(contato) : response = new { data = false, message = result.ToString("") };
+            
             return Json(response, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult AddNotification(NotificacoesViewModel notific)
         {
-            var response = _appservice.AddNotification(notific);
+            //FluentValidation
+            ValidationResult result = _notific.Validate(notific);
+
+            dynamic response = result.IsValid ? _appservice.AddNotification(notific) : new { data = false, message = result.ToString("") };
 
             return Json(response, JsonRequestBehavior.AllowGet);
         }
