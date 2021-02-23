@@ -223,11 +223,11 @@
     .button:active {
         margin-top: 2px;
     }
-    /*.btnfixed {
-        position: fixed;
-        bottom: 50px;
-        left: 50px;
-    }*/
+    .btn-header {
+        border: none;
+        float: left;
+        margin: -40px 100px;
+    }
     .btn-fix {
         font-weight: bold;
         color: #fff;
@@ -588,7 +588,11 @@
         width: 18px;
         height: 18px;
     }
-
+    .btn-header {
+        border: none;
+        float: left;
+        margin: -35px 100px;
+    }
     .save {
         /*background: url('~/Content/image/');*/
     }

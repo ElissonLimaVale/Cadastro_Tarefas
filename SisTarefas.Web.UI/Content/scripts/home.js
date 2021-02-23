@@ -53,14 +53,17 @@
                 data: contato
             }).done((data) => {
                 if (data.data) {
-                    $("input").val("");
+                    notific.success(data.message);
+                    ModalCadastro.Close();
+                    //window.Location.href = "/";
+                } else {
+                    alert(data.message);
                 }
-                alert(data.message);
             }).fail(() => {
                 alert("Ops, Ocorreu um erro durante a requisição, por favor atualize a página!");
             })
         } else {
-            alert("Por favor preencha todos os campos!");
+            notific.warning("Por favor preencha todos os campos!");
         }
     });
 
@@ -85,15 +88,17 @@
                 data: tarefa
             }).done((data) => {
                 if (data.data) {
+                    notific.success(data.message);
                     $("input").val("");
                     $("textarea").val("");
+                } else {
+                    alert(data.message);
                 }
-                alert(data.message);
             }).fail(() => {
                 alert("Ops, Ocorreu um erro durante a requisição, por favor atualize a página!");
             })
         } else {
-            alert("Por favor preencha todos os campos obrigatorios *!");
+            notific.warning("Por favor preencha todos os campos obrigatorios **");
         }
     });
 
@@ -103,7 +108,7 @@
         if ($("#select-contato").val() != "Selecionar" && $("#select-contato").val() != "Selecionar Contato")
         {
             $("input[name=add-contato-value]").val($("#select-contato").val());
-            $("#select-contato").val("Selecionar Contato");
+            //$("#select-contato").val("Selecionar Contato");
         }
        
     });
