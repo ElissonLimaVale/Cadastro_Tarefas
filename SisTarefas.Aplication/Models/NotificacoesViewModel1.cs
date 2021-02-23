@@ -9,7 +9,7 @@ namespace SisTarefas.Application.Models
         //public string tarefa { get; set; }
         public DateTime data { get; set; }
         public bool response { get; set; }
-        public virtual TarefaViewModel Tarefa { get; set; }
+        //public virtual TarefaViewModel Tarefa { get; set; }
 
     }
 }

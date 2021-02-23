@@ -6,12 +6,13 @@ using SisTarefas.Repository.Mapping;
 
 namespace SisTarefas.Repository.Context
 {
+    
     public class CadastroTarefasContext: DbContext
     {
-
+        
         public CadastroTarefasContext(): base("CadastroTarefasContext")
         {
-
+            var assegurarDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
 
         public DbSet<Tarefa> Tarefas { get; set; }

@@ -1,5 +1,10 @@
-﻿
-namespace SisTarefas.WebUI.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SisTarefas.Application.Models
 {
     public class ContatosViewModel
     {

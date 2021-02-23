@@ -3,6 +3,8 @@ using SisTarefas.Repository.Base;
 using SisTarefas.Repository.Context;
 using SisTarefas.Repository.Interface;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SisTarefas.Repository
 {
@@ -18,7 +20,7 @@ namespace SisTarefas.Repository
 
         public dynamic Cadastrar(Tarefa tarefa)
         {
-            dynamic response = new { data = true, message = "Cadastrado com sucesso!" };
+            dynamic response = new { data = true, message = "Tarefa salva com sucesso!" };
             try
             {
                 _entity.Tarefas.Add(tarefa);
@@ -28,6 +30,52 @@ namespace SisTarefas.Repository
             {
                 response = new { data = false, message = ex };
             }
+            return response;
+        }
+
+        public dynamic AddNotification(Notificacoes notific)
+        {
+            dynamic response = new { data = true, message = "Contato adicionado com sucesso!" };
+            try
+            {
+                _entity.Notificacoes.Add(notific);
+                _entity.SaveChanges();
+
+            }catch(Exception ex)
+            {
+                response = new { data = false, message = ex };
+            }
+            return response;
+        }
+        public dynamic CadastrarContato(Contatos contato)
+        {
+            dynamic response = new { data = true, message = "Contato adicionado com sucesso!" };
+            try
+            {
+                _entity.Contatos.Add(contato);
+                _entity.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                response = new { data = false, message = ex };
+            }
+            return response;
+        }
+
+        public List<string> ListarContatos()
+        {
+            List<string> response;
+            try
+            {
+                response = _entity.Contatos.Select(x => x.nome).ToList<string>();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                response = new List<string>();
+            }
+            
             return response;
         }
     }
