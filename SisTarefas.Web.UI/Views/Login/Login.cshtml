@@ -11,15 +11,15 @@
     <link href="~/Content/style/Global.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Content/scripts/Global.js"></script>
-    <script src="~/Content/scripts/home.js"></script>
+    <script src="~/Content/scripts/Login.js"></script>
     <style>
     </style>
 </head>
 <body style="background-color: rgba(0,0,0,.1);">
     <div class="login-bar">
-        <div class="widget-box">
+        <div class="widget-box" id="login-user">
             <div class="widget-header">
-                <h4 class="sub-title-top" style="text-align: center;">Login</h4>
+                <h4 class="sub-title-top">Login</h4>
             </div>
             <div class="widget-body">
                 <div class="form-input-login center">
@@ -29,6 +29,37 @@
                 <div class="form-input-login center">
                     <label class="label-input">Senha</label>
                     <input class="input" name="senha" type="password" required />
+                </div>
+            </div>
+            <div class="form-input-login">
+                <div class="content-button">
+                    <button class="button-add button input">Cadastrar</button>
+                </div>
+                <div class="content-button">
+                    <button class="button-remove button input">Entrar</button>
+                </div>
+            </div>
+        </div>
+        <div class="widget-box" id="cadastro-user">
+            <div class="widget-header">
+                <h4 class="sub-title-top">Login</h4>
+            </div>
+            <div class="widget-body">
+                <div class="form-input-login center">
+                    <label class="label-input">Nome ou Email</label>
+                    <input class="input" name="nome" type="text" required />
+                </div>
+                <div class="form-input-login center">
+                    <label class="label-input">Senha</label>
+                    <input class="input" name="senha" type="password" required />
+                </div>
+            </div>
+            <div id="controle-login" class="form-input-login">
+                <div class="content-button">
+                    <button id="cadastrar-user" class="button-add button input">Cadastrar</button>
+                </div>
+                <div class="content-button">
+                    <button class="button-remove button input">Entrar</button>
                 </div>
             </div>
         </div>

@@ -171,6 +171,7 @@
     <Content Include="Content\image\success-button.png" />
     <Content Include="Content\scripts\Global.js" />
     <Content Include="Content\scripts\home.js" />
+    <Content Include="Content\scripts\Login.js" />
     <Content Include="Content\style\Global.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
