@@ -143,6 +143,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\image\icon-add.png" />
+    <Content Include="Content\image\icon-ckecklist.png" />
+    <Content Include="Content\image\icon-fechar.png" />
+    <Content Include="Content\image\icon-lixeira.png" />
+    <Content Include="Content\image\icon-seta.png" />
+    <Content Include="Content\image\icon-seta1.png" />
+    <Content Include="Content\image\lixeira.png" />
+    <Content Include="Content\image\menu8.jpg" />
+    <Content Include="Content\image\notifica-true.png" />
+    <Content Include="Content\image\notifica.png" />
+    <Content Include="Content\image\projthis-error.png" />
+    <Content Include="Content\image\projthis-error1.png" />
+    <Content Include="Content\image\projthis-success.png" />
+    <Content Include="Content\image\projthis-warning.png" />
+    <Content Include="Content\image\projthis-warning1.png" />
+    <Content Include="Content\image\success-button.png" />
+    <Content Include="Content\scripts\Global.js" />
+    <Content Include="Content\scripts\home.js" />
+    <Content Include="Content\style\Global.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
