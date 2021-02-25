@@ -78,5 +78,33 @@ namespace SisTarefas.Repository
             
             return response;
         }
+
+        public Tarefa BuscarTarefa(int id)
+        {
+            return _entity.Tarefas.FirstOrDefault(x => x.id == id);
+        }
+
+        public dynamic NotificationVerific(string usuario)
+        {
+            dynamic response;
+            try
+            {
+                response = new
+                {
+                    data = true,
+                    notification = _entity.Notificacoes.Select(x => x).Where(x => x.data <= DateTime.Now && x.nome == usuario)
+                };
+
+            }catch(Exception ex)
+            {
+                response = new
+                {
+                    data = false,
+                    notification = new Notificacoes()
+                };
+            }
+            
+            return response;
+        }
     }
 }

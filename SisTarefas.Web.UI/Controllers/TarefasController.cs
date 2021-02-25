@@ -1,5 +1,6 @@
 ﻿
 using FluentValidation.Results;
+using SisAtividades.Models;
 using SisTarefas.Application.Interface;
 using SisTarefas.Application.Models;
 using SisTarefas.Application.Models.Validators;
@@ -15,7 +16,7 @@ namespace SisTarefas.WebUI.Controllers
         private readonly TarefaValidator _tarefa;
         private readonly ContatoValidator _contato;
         private readonly NotificacaoValidator _notific;
-
+        private UsuarioViewModel _usuario;
         public TarefasController(ITarefasAppService appservice, 
                                 TarefaValidator tarefa,
                                 ContatoValidator contato,
@@ -26,10 +27,16 @@ namespace SisTarefas.WebUI.Controllers
             _tarefa = tarefa;
             _contato = contato;
             _notific = notific;
+
         }
 
         public ActionResult Index()
         {
+            _usuario = Session["usuario"] as UsuarioViewModel;
+            if (_usuario == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
             ViewBag.Contatos = ListarContatos();
             return View();
         }
@@ -41,6 +48,11 @@ namespace SisTarefas.WebUI.Controllers
         [HttpPost]
         public ActionResult CadastrarTarefa(TarefaViewModel tarefa)
         {
+            _usuario = Session["usuario"] as UsuarioViewModel;
+            if (_usuario == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
             //FluentValidation
             ValidationResult result = _tarefa.Validate(tarefa);
             
@@ -49,8 +61,26 @@ namespace SisTarefas.WebUI.Controllers
             return Json(response);
         }
 
+        [HttpPost]
+        public ActionResult BuscarTarefa(int id)
+        {
+            _usuario = Session["usuario"] as UsuarioViewModel;
+            if (_usuario == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
+            TarefaViewModel response = _appservice.BuscarTarefa(id);
+
+            return Json(response, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult CadastrarContato(ContatosViewModel contato)
         {
+            _usuario = Session["usuario"] as UsuarioViewModel;
+            if (_usuario == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
             //FluentValidation
             ValidationResult result = _contato.Validate(contato);
 
@@ -61,6 +91,11 @@ namespace SisTarefas.WebUI.Controllers
 
         public ActionResult AddNotification(NotificacoesViewModel notific)
         {
+            _usuario = Session["usuario"] as UsuarioViewModel;
+            if (_usuario == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
             //FluentValidation
             ValidationResult result = _notific.Validate(notific);
 
@@ -69,10 +104,19 @@ namespace SisTarefas.WebUI.Controllers
             return Json(response, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult NotificationVerific(string nome)
+        {
+            _usuario = Session["usuario"] as UsuarioViewModel;
+            if (_usuario == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
+            return _appservice.NotificationVerific(nome);
+        }
 
         public ActionResult Error()
         {
-            return View("Error");
+            return PartialView("Error");
         }
 
         #region MÉTODOS QUE NÃO RETORNAM VIEW
@@ -81,6 +125,21 @@ namespace SisTarefas.WebUI.Controllers
             List<string> response = _appservice.ListarContatos();
 
             return response;
+        }
+
+        private bool ValidarParams(dynamic[] parametros)
+        {
+            bool response = true;
+
+            foreach(dynamic item in parametros)
+            {
+                if(item == null || item == "")
+                {
+                    response = false;
+                }
+            }
+            return response;
+
         }
         #endregion
     }

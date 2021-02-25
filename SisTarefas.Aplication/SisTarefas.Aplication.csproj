@@ -57,14 +57,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aplication\LoginAppService.cs" />
     <Compile Include="Aplication\TarefasAppService.cs" />
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="AutoMapper\DomainToViewModelMapper.cs" />
     <Compile Include="AutoMapper\ModelViewToDomainMapper.cs" />
+    <Compile Include="Interface\ILoginAppService.cs" />
     <Compile Include="Interface\ITarefasAppService.cs" />
     <Compile Include="Models\ContatosViewModel1.cs" />
     <Compile Include="Models\NotificacoesViewModel1.cs" />
     <Compile Include="Models\TarefaViewModel1.cs" />
+    <Compile Include="Models\UsuarioViewModel.cs" />
     <Compile Include="Models\Validation\ContatoValidatior.cs" />
     <Compile Include="Models\Validation\NotificacaoValidator.cs" />
     <Compile Include="Models\Validation\TarefaValidator.cs" />
