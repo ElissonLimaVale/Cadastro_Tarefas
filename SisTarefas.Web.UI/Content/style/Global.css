@@ -450,6 +450,17 @@
         margin: 10px 20%;
     }
 
+    #login-user {
+        height: 100%;
+    }
+    #controle-login {
+        position: relative;
+        bottom: 20px;
+        width: 40%;
+        float: left;
+        border: none;
+
+    }
 }
 
 
@@ -876,5 +887,9 @@
     .form-input-login {
         width: 80%;
         margin: 10px 10%;
+    }
+
+    #login-user{
+        height: 100%;
     }
 }
