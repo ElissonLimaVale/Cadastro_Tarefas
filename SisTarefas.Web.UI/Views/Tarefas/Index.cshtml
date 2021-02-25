@@ -17,7 +17,7 @@
         
     </style>
 </head>
-<body>
+<body onload="notification.Start(1000);">
     <div class="widget-box">
         <div class="widget-header">
             <div class="widget-icon"></div>
@@ -130,6 +130,14 @@
     
     <div id="cadastrar_contato">
         @Html.Partial("_PartialCadastrarContato")
+    </div>
+    <div id="notification-box" hidden>
+        @Html.Partial("_PartialNotification")
+    </div>
+    <div class="widget-box">
+        <div class="widget-header">
+            <h5 class="sub-title-top" style="text-align: center;">Elisson Vale</h5>
+        </div>
     </div>
 </body>
 </html>

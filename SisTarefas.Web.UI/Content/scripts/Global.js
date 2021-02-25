@@ -1,10 +1,6 @@
 ﻿$(document).ready(() => {
 
-    function LoadShow() {
-    }
-    function LoadHide() {
-
-    }
+    
     //notificacão de error e pequenos avisos
     notific = {
         error: (msg) => {
@@ -45,17 +41,40 @@
     notification = {
         action: null,
 
-        Start: (temp) => {
+        Start: (interval) => {
             this.action = setInterval(() => {
                 $("#notific-tarefa").addClass("notific-true");
                 setTimeout(() => {
                     $("#notific-tarefa").removeClass("notific-true");
-                }, temp / 2);
-            }, temp);
+                }, interval / 2);
+            }, interval);
         },
         Stop: () => {
             $("#notific-tarefa").removeClass("notific-true");
-            delete this.action;
+            clearInterval(this.action);
+        },
+        IsOpen: () => {
+            return !$("#notification-box").is(":hidden");
+        },
+        Open: () => {
+            $("#notification-box").show(200);
+        },
+        Close: () => {
+            $("#notification-box").hide(200);
+        }
+    },
+    //Preload de carregamento
+    Load = {
+        Show: () => {
+            if ($("#load-area").leght) {
+                $("#load-area").show();
+            } else {
+                $("body").append("<div id='load-area'><div id='load-loop'></div></div>");
+                $("#load-area").show();
+            }
+        }, 
+        Hide: () => {
+            $("#load-area").hide();
         }
     };
 

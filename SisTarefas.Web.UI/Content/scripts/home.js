@@ -1,5 +1,5 @@
 ﻿$(document).ready(() => {
-    notification.Start(1200);
+    
     setTimeout(() => { notification.Stop(); }, 5000);
     // Objeto Contato 
     var contato = {
@@ -49,11 +49,13 @@
         contato.telefone = $("input[name=numero-contato]").val();
 
         if (ValidarJson(contato)) {
+            Load.Show();
             $.ajax({
                 method: "Post",
                 url: "../Tarefas/CadastrarContato",
                 data: contato
             }).done((data) => {
+                Load.Hide();
                 if (data.data) {
                     notific.success(data.message);
                     ModalCadastro.Close();
@@ -62,6 +64,7 @@
                     alert(data.message);
                 }
             }).fail(() => {
+                Load.Hide();
                 alert("Ops, Ocorreu um erro durante a requisição, por favor atualize a página!");
             })
         } else {
@@ -84,12 +87,14 @@
         tarefa.notificacao = $("input[name=notificacao]").val();
 
         if (ValidarJson(tarefa)) {
+            Load.Show();
             $.ajax({
                 method: "Post",
                 url: "../Tarefas/CadastrarTarefa",
                 data: tarefa
             }).done((data) => {
                 if (data.data) {
+                    Load.Hide();
                     notific.success(data.message);
                     $("input").val("");
                     $("textarea").val("");
@@ -97,6 +102,7 @@
                     alert(data.message);
                 }
             }).fail(() => {
+                Load.Hide();
                 alert("Ops, Ocorreu um erro durante a requisição, por favor atualize a página!");
             })
         } else {
@@ -112,12 +118,25 @@
             $("input[name=add-contato-value]").val($("#select-contato").val());
             //$("#select-contato").val("Selecionar Contato");
         }
-       
     });
 
     $("#remover-contato").click(() => {
         $("input[name=add-contato-value]").val("");
     });
+
+
+    //Notification
+    $("#notific-tarefa").click(() => {
+        if (notification.IsOpen()) {
+            notification.Close();
+        } else {
+            notification.Open();
+        }
+    });
+    $("#notific-exit").click(() => {
+        notification.Close();
+    });
+    
 
 
 
