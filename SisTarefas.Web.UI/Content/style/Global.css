@@ -397,13 +397,14 @@
     .notific-area {
         width: 100%;
     }
-    #notification-box .item {
+    #notification-box .item-notification {
         width: 90%;
         background-color: rgba(0,0,0,.1);
         padding: 5px 12px;
         border-radius: 3px;
         margin: 5px calc(5% - 12px);
         color: rgba(0,0,0,.5);
+        cursor: pointer;
     }
     #load-area{
         width: 100%;
@@ -433,6 +434,45 @@
         }
     }
 
+    .login-bar {
+        width: 50%;
+        height: 350px;
+        overflow: hidden;
+        margin: auto;
+        /*border: 1px solid rgba(0,0,0,.3);*/
+        border-radius: 2px;
+        margin-top: 100px;
+        background-color: #fff;
+    }
+
+    .form-input-login {
+        width: 60%;
+        margin: 10px 20%;
+    }
+
+    #login-user {
+        height: 100%;
+    }
+    #controle-login {
+        position: relative;
+        bottom: 20px;
+        width: 40%;
+        float: left;
+        border: none;
+
+    }
+    .btn-login {
+        margin-top: 20px;
+        width: 40%;
+        display: flex;
+        /*border: 1px solid rgba(0,0,0,.1);*/
+        padding: 5px;
+        float: left;
+    }
+
+    #cadastro-user {
+        display: none;
+    }
 }
 
 
@@ -805,12 +845,13 @@
         
     }
 
-    #notification-box .item {
+    #notification-box .item-notification {
         width: 90%;
         background-color: rgba(0,0,0,.1);
         padding: 5px 12px;
         border-radius: 3px;
         margin: 5px calc(5% - 12px);
+        cursor: pointer;
     }
     #load-area {
         width: 100%;
@@ -841,5 +882,38 @@
         100% {
             transform: rotate(360deg);
         }
+    }
+
+
+    .login-bar {
+        width: 90%;
+        height: auto;
+        overflow: hidden;
+        margin: auto;
+        margin-top: 10vh;
+        /*border-bottom: 1px solid rgba(0,0,0,.3);*/
+        border-radius: 2px;
+        background-color: #fff;
+    }
+
+    .form-input-login {
+        width: 80%;
+        margin: 10px 7%;
+    }
+
+    #login-user{
+        height: 100%;
+    }
+    .btn-login {
+        margin-top: 10px;
+        width: 32%;
+        display: flex;
+        /*border: 1px solid rgba(0,0,0,.1);*/
+        padding: 8px;
+        float: left;
+    }
+
+    #cadastro-user {
+        display: none;
     }
 }

@@ -9,5 +9,7 @@ namespace SisTarefas.Application.Interface
         dynamic CadastrarContato(ContatosViewModel contato);
         dynamic AddNotification(NotificacoesViewModel contato);
         List<string> ListarContatos();
+        TarefaViewModel BuscarTarefa(int id);
+        dynamic NotificationVerific(string usuario);
     }
 }

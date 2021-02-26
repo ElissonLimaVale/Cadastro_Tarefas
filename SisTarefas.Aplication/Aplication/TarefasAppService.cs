@@ -35,5 +35,15 @@ namespace SisTarefas.Application
             return _repository.ListarContatos();
         }
 
+        public TarefaViewModel BuscarTarefa(int id)
+        {
+            return Mapper.Map<Tarefa, TarefaViewModel>(_repository.BuscarTarefa(id));
+        }
+
+        public dynamic NotificationVerific(string usuario)
+        {
+            return _repository.NotificationVerific(usuario);
+        }
+
     }
 }

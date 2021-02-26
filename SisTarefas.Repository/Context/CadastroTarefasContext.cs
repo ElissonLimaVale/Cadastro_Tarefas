@@ -18,6 +18,7 @@ namespace SisTarefas.Repository.Context
         public DbSet<Tarefa> Tarefas { get; set; }
         public DbSet<Contatos> Contatos { get; set; }
         public DbSet<Notificacoes> Notificacoes { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelbuilder)
         {
@@ -38,6 +39,7 @@ namespace SisTarefas.Repository.Context
             modelbuilder.Configurations.Add(new TarefasMapping());
             modelbuilder.Configurations.Add(new ContatosMapping());
             modelbuilder.Configurations.Add(new NotificacoesMapping());
+            modelbuilder.Configurations.Add(new UsuarioMappig());
         }
     }
 }

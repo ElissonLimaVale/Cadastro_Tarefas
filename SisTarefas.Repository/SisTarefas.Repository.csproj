@@ -37,6 +37,9 @@
     <Reference Include="AutoMapper, Version=4.0.4.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\Aplica--o-ASP.NET-MVC-cadastro-de-tarefas\packages\AutoMapper.4.0.4\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.2.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.0.2\lib\net472\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\Aplica--o-ASP.NET-MVC-cadastro-de-tarefas\packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
     </Reference>
@@ -53,10 +56,23 @@
       <HintPath>..\packages\Ninject.3.3.3\lib\net45\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,16 +83,23 @@
   <ItemGroup>
     <Compile Include="Base\Conexao.cs" />
     <Compile Include="Context\CadastroTarefasContext.cs" />
+    <Compile Include="Interface\ILoginRepository.cs" />
     <Compile Include="Interface\ITarefaRepository.cs" />
     <Compile Include="Mapping\ContatosMapping.cs" />
     <Compile Include="Mapping\NotificacoesMapping.cs" />
     <Compile Include="Mapping\TarefasMapping.cs" />
+    <Compile Include="Mapping\UsuarioMappig.cs" />
     <Compile Include="Migrations\202102230355264_SqlTeste.cs" />
     <Compile Include="Migrations\202102230355264_SqlTeste.designer.cs">
       <DependentUpon>202102230355264_SqlTeste.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102260014526_update.cs" />
+    <Compile Include="Migrations\202102260014526_update.designer.cs">
+      <DependentUpon>202102260014526_update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\LoginRepository.cs" />
     <Compile Include="Repository\TarefaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +118,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202102230355264_SqlTeste.resx">
       <DependentUpon>202102230355264_SqlTeste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102260014526_update.resx">
+      <DependentUpon>202102260014526_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

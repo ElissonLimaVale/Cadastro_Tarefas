@@ -1,0 +1,77 @@
+﻿@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastro de Tarefas</title>
+    <link href="~/Content/style/Global.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Content/scripts/Global.js"></script>
+    <script src="~/Content/scripts/Login.js"></script>
+    <style>
+    </style>
+</head>
+<body style="background-color: rgba(0,0,0,.1);">
+    <div class="login-bar">
+        <div class="widget-box" id="login-user">
+            <div class="widget-header">
+                <h4 class="sub-title-top" style="margin-left: 40px;">Login</h4>
+            </div>
+            <div class="widget-body">
+                <div class="form-input-login center">
+                    <label class="label-input">Email</label>
+                    <input class="input" name="login-email" type="email" required />
+                </div>
+                <div class="form-input-login center">
+                    <label class="label-input">Senha</label>
+                    <input class="input" name="login-senha" type="password" required />
+                </div>
+            </div>
+            <div class="form-input-login">
+                <div class="btn-login">
+                    <button id="cadastrar-login" class="button-remove button input">Cadastrar</button>
+                </div>
+                <div class="btn-login">
+                    <button id="login-action" class="button-add button input">Entrar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget-box" id="cadastro-user" hidden>
+            <div class="widget-header">
+                <h4 class="sub-title-top" style="margin-left: 40px;">Criar Conta</h4>
+            </div>
+            <div class="widget-body">
+                <div class="form-input-login center">
+                    <label class="label-input">Nome</label>
+                    <input class="input" name="cadastro-nome" type="text" required />
+                </div>
+                <div class="form-input-login center">
+                    <label class="label-input">Email</label>
+                    <input class="input" name="cadastro-email" type="email" required />
+                </div>
+                <div class="form-input-login center">
+                    <label class="label-input">Contato</label>
+                    <input class="input" name="cadastro-telefone" type="text" required />
+                </div>
+                <div class="form-input-login center">
+                    <label class="label-input">Senha</label>
+                    <input class="input" name="cadastro-senha" type="password" required />
+                </div>
+            </div>
+            <div id="controle-login" class="form-input-login">
+                @*<div class="btn-login">
+                    <button id="cadastrar-user" class="button-add button input" hidden>Recuperar senha</button>
+                </div>*@
+                <div class="btn-login">
+                    <button id="cadastrar-action" class="button-add button input">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
