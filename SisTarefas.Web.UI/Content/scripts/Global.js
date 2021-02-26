@@ -78,5 +78,17 @@
         }
     };
 
+    Validate = {
+        JsonParams: (jsonparams, acceptnull) => {
+
+            for (var item in jsonparams) {
+
+                if (!acceptnull.includes(item) && !!!jsonparams[item]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
 
 });

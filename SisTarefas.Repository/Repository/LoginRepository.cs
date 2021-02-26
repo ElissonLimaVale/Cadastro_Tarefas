@@ -1,11 +1,10 @@
-﻿using SisTarefas.Repository.Base;
+﻿
+using SisTarefas.Domain.Base;
+using SisTarefas.Repository.Base;
 using SisTarefas.Repository.Context;
 using SisTarefas.Repository.Interface;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SisTarefas.Repository.Repository
 {
@@ -19,6 +18,62 @@ namespace SisTarefas.Repository.Repository
         {
             _conexao = conexao;
             _entity = entity;
+        }
+
+        public Usuario Cadastrar(Usuario user)
+        {
+
+            _entity.Usuario.Add(user);
+            _entity.SaveChanges();
+
+            return user;
+        }
+
+        public dynamic Deletar(Usuario user)
+        {
+            dynamic response = new { data = true, message = "Deletado com sucesso!" };
+            try
+            {
+                var registro = _entity.Usuario.FirstOrDefault(
+                    x => x.nome == user.nome &&
+                    x.email == user.email
+                );
+                _entity.Usuario.Remove(registro);
+                _entity.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                response = new { data = false, message = ex.ToString() };
+            }
+
+            return response;
+        }
+
+        public dynamic Atualizar(Usuario user)
+        {
+            dynamic response = new { data = true, message = "Atualizado com sucesso!" };
+            try
+            {
+                var registro = _entity.Usuario.FirstOrDefault(
+                    x => x.nome == user.nome &&
+                    x.email == user.email
+                );
+                registro.nome = user.nome;
+                registro.email = user.email;
+                //registro.senha = user.senha;
+                _entity.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                response = new { data = false, message = ex.ToString() };
+            }
+
+            return response;
+        }
+
+        public Usuario Logar(Usuario user)
+        {
+            return new Usuario();
         }
     }
 }

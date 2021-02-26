@@ -1,5 +1,5 @@
 ﻿$(document).ready(() => {
-    
+
     setTimeout(() => { notification.Stop(); }, 5000);
     // Objeto Contato 
     var contato = {
@@ -7,29 +7,29 @@
         email: null,
         telefone: null
     },
-    //Objeto tarefa
-    tarefa = {
-        data_prevista: null,
-        data_conclusao: null,
-        area: null,
-        impacto: null,
-        status: null,
-        origem: null,
-        responsavel: null,
-        descricao: null,
-        observacoes: null,
-        contato: null,
-        notificacao: null
-    },
-    //Modal de cadastro de contato
-    ModalCadastro = {
-        Open: () => {
-            $("#cadastrar_contato").css("top", "0px");
+        //Objeto tarefa
+        tarefa = {
+            data_prevista: null,
+            data_conclusao: null,
+            area: null,
+            impacto: null,
+            status: null,
+            origem: null,
+            responsavel: null,
+            descricao: null,
+            observacoes: null,
+            contato: null,
+            notificacao: null
         },
-        Close: () => {
-            $("#cadastrar_contato").css("top", "-800px");
-        }
-    };
+        //Modal de cadastro de contato
+        ModalCadastro = {
+            Open: () => {
+                $("#cadastrar_contato").css("top", "0px");
+            },
+            Close: () => {
+                $("#cadastrar_contato").css("top", "-800px");
+            }
+        };
 
     // controle de modal de cadastro de contato
     $("#adicionar_contato").click(() => {
@@ -48,7 +48,7 @@
         contato.email = $("input[name=email-contato]").val();
         contato.telefone = $("input[name=numero-contato]").val();
 
-        if (ValidarJson(contato)) {
+        if (Validate.JsonParams(contato, [""])) {
             Load.Show();
             $.ajax({
                 method: "Post",
@@ -86,7 +86,7 @@
         tarefa.contato = $("input[name=add-contato-value]").val();
         tarefa.notificacao = $("input[name=notificacao]").val();
 
-        if (ValidarJson(tarefa)) {
+        if (Validate.JsonParams(tarefa, ["observacoes", "descricao", "notificacao"])) {
             Load.Show();
             $.ajax({
                 method: "Post",
@@ -113,8 +113,7 @@
 
     //metodos de interação de dados em tela
     $("#adicionar-contato").click(() => {
-        if ($("#select-contato").val() != "Selecionar" && $("#select-contato").val() != "Selecionar Contato")
-        {
+        if ($("#select-contato").val() != "Selecionar" && $("#select-contato").val() != "Selecionar Contato") {
             $("input[name=add-contato-value]").val($("#select-contato").val());
             //$("#select-contato").val("Selecionar Contato");
         }
@@ -136,23 +135,7 @@
     $("#notific-exit").click(() => {
         notification.Close();
     });
-    
 
 
 
-
-    // Valida Atributos de um Json
-    function ValidarJson(data) {
-        let acceptnull = ["observacoes", "descricao","notificacao"];
-        let response = true;
-
-        for (var item in data) {
-
-            if (!acceptnull.includes(item) && data[item] == null || data[item] == "") {
-                response = false;
-            }
-        }
-
-        return response;
-    }
-})
+});

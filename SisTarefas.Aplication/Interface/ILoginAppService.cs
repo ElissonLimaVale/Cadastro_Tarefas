@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SisAtividades.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,10 @@ namespace SisAtividades.Interface
 {
     public interface ILoginAppService
     {
+        UsuarioViewModel Cadastrar(UsuarioViewModel user);
+        dynamic Atualizar(UsuarioViewModel user);
+        dynamic Deletar(UsuarioViewModel user);
+
+        UsuarioViewModel Logar(UsuarioViewModel user);
     }
 }
