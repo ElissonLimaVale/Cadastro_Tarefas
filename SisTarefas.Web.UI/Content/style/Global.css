@@ -436,7 +436,7 @@
 
     .login-bar {
         width: 50%;
-        height: 350px;
+        height: auto;
         overflow: hidden;
         margin: auto;
         /*border: 1px solid rgba(0,0,0,.3);*/
@@ -453,6 +453,7 @@
     #login-user {
         height: 100%;
     }
+
     #controle-login {
         position: relative;
         bottom: 20px;
