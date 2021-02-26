@@ -41,7 +41,7 @@ namespace SisTarefas.Repository.Repository
             }
             catch(Exception ex)
             {
-                response = new { data = false, message = ex, usuario = new Usuario() };
+                response = new { data = false, message = ex.ToString(), usuario = new Usuario() };
             }
             
 

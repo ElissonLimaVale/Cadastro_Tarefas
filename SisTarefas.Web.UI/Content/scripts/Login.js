@@ -66,7 +66,7 @@
                 Load.Hide();
                 if (data.data) {
                     notific.success(data.message);
-                    window.location.href = "../Tarefas/Index";
+                    window.location.href = "/Tarefas/Index";
                 } else {
                     notific.error(data.message);
                 }
