@@ -1,12 +1,13 @@
 ﻿$(document).ready(() => {
     //Objetos de dados da tela
     let UsuarioLogin = {
-        nome: null,
+        email: null,
         senha: null
     },
     UsuarioCadastro = {
         nome: null,
         email: null,
+        telefone: null,
         senha: null
     }
 
@@ -18,7 +19,7 @@
 
     //Faz a requisição de login
     $("#login-action").click(() => {
-        UsuarioLogin.nome = $("input[name=login-nome]").val();
+        UsuarioLogin.email = $("input[name=login-email]").val();
         UsuarioLogin.senha = $("input[name=login-senha]").val();
 
         if (Validate.JsonParams(UsuarioLogin, [""])) {
@@ -27,9 +28,19 @@
                 method: "Post",
                 url: "../Login/Logar",
                 data: UsuarioLogin
-            }).fail(() => {
+            }).done((data) => {
+                
+                if (data.data) {
+                    window.location.href = "/Tarefas/Index";
+                    notific.success(data.message);
+                } else {
+                    notific.error(data.message);
+                }
                 Load.Hide();
+                
+            }).fail(() => {
                 notific.error("Ops, Ocorreu um erro durante a requisição!");
+                Load.Hide();
             });
         } else {
             notific.warning("Por favor preencha todos os campos!");
@@ -38,15 +49,27 @@
 
     //Faz a requisição de cadastro
     $("#cadastrar-action").click(() => {
-        UsuarioCadastro.nome = $("input[name=cadastro-nome]");
-        UsuarioCadastro.email = $("input[name=cadastro-emal]");
-        UsuarioCadastro.senha = $("input[name=cadastro-senha]");
-        if (Validate.JsonParams(UsuarioCadastro, [""])) {
+        UsuarioCadastro.nome = $("input[name=cadastro-nome]").val();
+        UsuarioCadastro.email = $("input[name=cadastro-email]").val();
+        UsuarioCadastro.telefone = $("input[name=cadastro-telefone]").val();
+        UsuarioCadastro.senha = $("input[name=cadastro-senha]").val();
+
+        if (Validate.JsonParams(UsuarioCadastro, ["nenhum"])) {
             Load.Show();
             $.ajax({
                 method: "Post",
-                url: "../Login/Cadastrar",
-                data: UsuarioLogin
+                url: "../Login/Cadastar",
+                data: {
+                    Usuario: UsuarioCadastro
+                }
+            }).done((data) => {
+                Load.Hide();
+                if (data.data) {
+                    notific.success(data.message);
+                    window.location.href = "../Tarefas/Index";
+                } else {
+                    notific.error(data.message);
+                }
             }).fail(() => {
                 Load.Hide();
                 notific.error("Ops, Ocorreu um erro durante a requisição!");

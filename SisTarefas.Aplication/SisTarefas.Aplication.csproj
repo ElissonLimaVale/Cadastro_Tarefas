@@ -71,6 +71,7 @@
     <Compile Include="Models\Validation\ContatoValidatior.cs" />
     <Compile Include="Models\Validation\NotificacaoValidator.cs" />
     <Compile Include="Models\Validation\TarefaValidator.cs" />
+    <Compile Include="Models\Validation\UsuarioValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

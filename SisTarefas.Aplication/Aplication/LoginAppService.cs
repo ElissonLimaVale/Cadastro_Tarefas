@@ -24,9 +24,10 @@ namespace SisAtividades.Aplication
             return _repository.Atualizar(Mapper.Map<UsuarioViewModel, Usuario>(user));
         }
 
-        public UsuarioViewModel Cadastrar(UsuarioViewModel user)
+        public dynamic Cadastrar(UsuarioViewModel user)
         {
-            return Mapper.Map<Usuario, UsuarioViewModel>(_repository.Cadastrar(Mapper.Map<UsuarioViewModel,Usuario>(user)));
+            dynamic response = _repository.Cadastrar(Mapper.Map<UsuarioViewModel, Usuario>(user));
+            return response;
         }
 
         public dynamic Deletar(UsuarioViewModel user)
@@ -36,7 +37,7 @@ namespace SisAtividades.Aplication
 
         public UsuarioViewModel Logar(UsuarioViewModel user)
         {
-            return Mapper.Map<Usuario, UsuarioViewModel>(_repository.Logar(Mapper.Map<UsuarioViewModel, Usuario>(user))); ;
+             return Mapper.Map<Usuario, UsuarioViewModel>(_repository.Logar(Mapper.Map<UsuarioViewModel, Usuario>(user)));
         }
     }
 }

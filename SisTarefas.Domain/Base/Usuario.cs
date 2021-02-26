@@ -3,6 +3,17 @@ namespace SisTarefas.Domain.Base
 {
     public class Usuario
     {
+        public Usuario()
+        {
+
+        }
+        public Usuario(string nome, string email, string telefone, string senha)
+        {
+            this.nome = nome;
+            this.email = email;
+            this.telefone = telefone;
+            this.senha = senha;
+        }
         public int id { get; set; }
         public string nome { get; set; }
         public string email { get; set; }

@@ -126,21 +126,6 @@ namespace SisTarefas.WebUI.Controllers
 
             return response;
         }
-
-        private bool ValidarParams(dynamic[] parametros)
-        {
-            bool response = true;
-
-            foreach(dynamic item in parametros)
-            {
-                if(item == null || item == "")
-                {
-                    response = false;
-                }
-            }
-            return response;
-
-        }
         #endregion
     }
 }

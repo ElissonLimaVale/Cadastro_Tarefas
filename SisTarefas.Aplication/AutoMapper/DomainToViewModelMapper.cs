@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using SisAtividades.Models;
 using SisTarefas.Application.Models;
 using SisTarefas.Domain.Base;
 namespace SisTarefas.Aplication.AutoMapper
@@ -14,6 +15,7 @@ namespace SisTarefas.Aplication.AutoMapper
            Mapper.CreateMap<Tarefa, TarefaViewModel >();
            Mapper.CreateMap<Contatos, ContatosViewModel >();
            Mapper.CreateMap<Notificacoes, NotificacoesViewModel >();
+           Mapper.CreateMap<Usuario, UsuarioViewModel >();
         }
     }
 }

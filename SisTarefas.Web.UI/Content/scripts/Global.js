@@ -66,7 +66,7 @@
     //Preload de carregamento
     Load = {
         Show: () => {
-            if ($("#load-area").leght) {
+            if ($("#load-area").length) {
                 $("#load-area").show();
             } else {
                 $("body").append("<div id='load-area'><div id='load-loop'></div></div>");

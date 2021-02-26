@@ -9,10 +9,9 @@ namespace SisAtividades.Interface
 {
     public interface ILoginAppService
     {
-        UsuarioViewModel Cadastrar(UsuarioViewModel user);
+        dynamic Cadastrar(UsuarioViewModel user);
         dynamic Atualizar(UsuarioViewModel user);
         dynamic Deletar(UsuarioViewModel user);
-
         UsuarioViewModel Logar(UsuarioViewModel user);
     }
 }

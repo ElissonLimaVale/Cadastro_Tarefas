@@ -1,5 +1,4 @@
-﻿
-using SisTarefas.Domain.Base;
+﻿using SisTarefas.Domain.Base;
 using SisTarefas.Repository.Base;
 using SisTarefas.Repository.Context;
 using SisTarefas.Repository.Interface;
@@ -20,13 +19,33 @@ namespace SisTarefas.Repository.Repository
             _entity = entity;
         }
 
-        public Usuario Cadastrar(Usuario user)
+        public dynamic Cadastrar(Usuario user)
         {
+            dynamic response;
+            try
+            {
+                user.senha = BCrypt.Net.BCrypt.HashPassword(user.senha);
+                var registro = _entity.Usuario.FirstOrDefault(x => x.email == user.email);
+                if(registro == null)
+                {
+                    _entity.Usuario.Add(user);
+                    _entity.SaveChanges();
 
-            _entity.Usuario.Add(user);
-            _entity.SaveChanges();
+                    user.senha = null;
+                    response = new { data = true, message = "Cadastrado! Aguarde, você esta sendo redirecionado!", usuario = user };
+                }
+                else
+                {
+                    response = new { data = false, message = "Usuario ja existente!", usuario = user };
+                }
+            }
+            catch(Exception ex)
+            {
+                response = new { data = false, message = ex, usuario = new Usuario() };
+            }
+            
 
-            return user;
+            return response;
         }
 
         public dynamic Deletar(Usuario user)
@@ -60,7 +79,7 @@ namespace SisTarefas.Repository.Repository
                 );
                 registro.nome = user.nome;
                 registro.email = user.email;
-                //registro.senha = user.senha;
+                registro.telefone = user.telefone;
                 _entity.SaveChanges();
             }
             catch (Exception ex)
@@ -73,7 +92,32 @@ namespace SisTarefas.Repository.Repository
 
         public Usuario Logar(Usuario user)
         {
-            return new Usuario();
+            Usuario response = new Usuario();
+            try
+            {
+                var registro = _entity.Usuario.FirstOrDefault(x => x.email == user.email);
+                if (registro != null)
+                {
+                    if (BCrypt.Net.BCrypt.Verify(user.senha, registro.senha))
+                    {
+                        response.nome = registro.nome;
+                        response.email = registro.email;
+                        response.telefone = registro.telefone;
+                        response.senha = null;
+                    }
+                    else
+                    {
+                        response = null;
+                    }
+                }
+                
+            }
+            catch(Exception ex)
+            {
+                response = null;
+            }
+            
+            return response;
         }
     }
 }
