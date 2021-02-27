@@ -1,11 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\SisTarefas.Aplication",
-    "\\SisTarefas.Aplication\\Models",
-    "\\SisTarefas.Web.UI",
-    "\\SisTarefas.Web.UI\\Controllers"
+    ""
   ],
-  "SelectedNode": "\\SisTarefas.Web.UI\\Controllers\\TarefasController.cs",
   "PreviewInSolutionExplorer": false
 }

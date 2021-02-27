@@ -1,6 +1,5 @@
 ﻿$(document).ready(() => {
 
-    setTimeout(() => { notification.Stop(); }, 5000);
     // Objeto Contato 
     var contato = {
         nome: null,
@@ -130,6 +129,7 @@
             notification.Close();
         } else {
             notification.Open();
+            notification.Stop();
         }
     });
     $("#notific-exit").click(() => {

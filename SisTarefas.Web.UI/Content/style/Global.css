@@ -96,6 +96,12 @@
         background-position: 50%;
         background-size: 100%;
     }
+    .icone-olho {
+        background: url('../image/olho-item.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
+        cursor: pointer;
+    }
     .icone-success {
         background: url('../image/success-button.png') no-repeat;
         background-position: 50%;
@@ -113,6 +119,23 @@
         background-position: 50%;
         background-size: 100%;
         cursor: pointer;
+    }
+
+    .notific-dell {
+        width: 16px;
+        height: 18px;
+        margin: -2px 2px;
+        float: right;
+        position: relative;
+        top: 0px;
+    }
+    .notific-view {
+        width: 16px;
+        height: 18px;
+        margin: -2px 2px;
+        float: right;
+        position: relative;
+        top: 0px;
     }
 
     .widget-body {
@@ -289,7 +312,7 @@
     .notific-error {
         position: absolute;
         right: 20px;
-        top: 70px;
+        top: 50px;
         width: auto;
         border-radius: 2px;
         padding: 10px;
@@ -317,7 +340,7 @@
     .notific-success {
         position: absolute;
         right: 20px;
-        top: 70px;
+        top: 50px;
         width: auto;
         border-radius: 2px;
         padding: 10px;
@@ -345,7 +368,7 @@
     .notific-warning {
         position: absolute;
         right: 20px;
-        top: 70px;
+        top: 50px;
         width: auto;
         border-radius: 2px;
         padding: 10px;
@@ -391,7 +414,7 @@
         width: 38%;
         height: auto;
         overflow: auto;
-        background-color: #f1f1f1;
+        background-color: #d8d7d7;
         border-radius: 4px;
     }
     .notific-area {
@@ -399,12 +422,12 @@
     }
     #notification-box .item-notification {
         width: 90%;
-        background-color: rgba(0,0,0,.1);
+        background-color: #f25a4c;
         padding: 5px 12px;
         border-radius: 3px;
         margin: 5px calc(5% - 12px);
-        color: rgba(0,0,0,.5);
-        cursor: pointer;
+        color: rgba(255,255,255,.8);
+        /*cursor: pointer;*/
     }
     #load-area{
         width: 100%;
@@ -477,6 +500,8 @@
 }
 
 
+
+
 @media screen and (max-width: 900px) {
     .title {
         color: rgba(0,0,0,.3);
@@ -541,6 +566,12 @@
         background-size: 100%;
         cursor: pointer;
     }
+    .icone-olho {
+        background: url('../image/olho-item.png') no-repeat;
+        background-position: 50%;
+        background-size: 100%;
+        cursor: pointer;
+    }
     .icone-notific {
         background: url('../image/notifica.png') no-repeat;
         background-position: 50%;
@@ -567,6 +598,24 @@
         background-position: 50%;
         background-size: 100%;
         cursor: pointer;
+    }
+
+    .notific-dell {
+        width: 16px;
+        height: 18px;
+        margin: 0px 2px;
+        float: right;
+        position: relative;
+        top: 0px;
+    }
+
+    .notific-view {
+        width: 16px;
+        height: 18px;
+        margin: 0px 2px;
+        float: right;
+        position: relative;
+        top: 0px;
     }
 
     .widget-body {
@@ -831,7 +880,7 @@
         top: 50px;
         height: auto;
         display: inline-block;
-        background-color: #f1f1f1;
+        background-color: #d8d7d7;
     }
 
     #notification-box .item {
@@ -848,12 +897,31 @@
 
     #notification-box .item-notification {
         width: 90%;
-        background-color: rgba(0,0,0,.1);
+        background-color: #f25a4c;
         padding: 5px 12px;
         border-radius: 3px;
         margin: 5px calc(5% - 12px);
         cursor: pointer;
     }
+
+    .notific-dell {
+        width: 16px;
+        height: 18px;
+        margin-top: -3px;
+        float: right;
+        position: relative;
+        top: 0px;
+    }
+
+    .notific-view {
+        width: 16px;
+        height: 18px;
+        margin-top: -3px;
+        float: right;
+        position: relative;
+        top: 0px;
+    }
+
     #load-area {
         width: 100%;
         height: 100vh;

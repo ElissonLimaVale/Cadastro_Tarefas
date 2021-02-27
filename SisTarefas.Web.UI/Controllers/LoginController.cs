@@ -58,16 +58,16 @@ namespace SisTarefas.Web.UI.Controllers
             ValidationResult result = _usuario.Validate(Usuario);
             if (result.IsValid)
             {
-                response = _log.Cadastrar(Usuario);
+                dynamic data = _log.Cadastrar(Usuario);
 
-                if (response.GetType().GetProperty("data").GetValue(response, null))
+                if (data.GetType().GetProperty("data").GetValue(data, null))
                 {
-                    Session["usuario"] = response.GetType().GetProperty("message").GetValue(response, null);
+                    Session["usuario"] = data.GetType().GetProperty("usuario").GetValue(data, null);
                     response = new { data = true, message = "Cadastrado! Aguarde, estamos redirecionando!" };
                 }
                 else
                 {
-                    response = new { data = false, message = response.GetType().GetProperty("message").GetValue(response, null) };
+                    response = new { data = false, message = data.GetType().GetProperty("message").GetValue(data, null) };
                 }
             }
             else
