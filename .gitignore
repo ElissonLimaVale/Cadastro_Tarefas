@@ -1,5 +1,5 @@
 
-.vs/Cadastro_Tarefas/v16/.suo
+*.vs/Cadastro_Tarefas/v16/.suo
 *.ldf
 *.mdf
 *.suo
@@ -26,4 +26,8 @@
 *.sdf
 *.pyc
 *.xml
+<<<<<<< HEAD
+*.pdl
+=======
 *.exe
+>>>>>>> Elisson

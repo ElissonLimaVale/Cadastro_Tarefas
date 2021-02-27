@@ -91,4 +91,12 @@
         }
     }
 
+    //Deletar notificações
+    $(".notific-dell").click( function() {
+        $(this).parent().hide(200);
+    });
+
+    $(".notific-view").on("click", function () {
+        alert($(this).parent().text());
+    });
 });
