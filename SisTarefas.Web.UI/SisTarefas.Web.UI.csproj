@@ -157,6 +157,7 @@
     <Content Include="Content\image\button-olho.png" />
     <Content Include="Content\image\icon-add.png" />
     <Content Include="Content\image\icon-ckecklist.png" />
+    <Content Include="Content\image\icon-fechar-black.png" />
     <Content Include="Content\image\icon-fechar.png" />
     <Content Include="Content\image\icon-lixeira.png" />
     <Content Include="Content\image\icon-seta.png" />
