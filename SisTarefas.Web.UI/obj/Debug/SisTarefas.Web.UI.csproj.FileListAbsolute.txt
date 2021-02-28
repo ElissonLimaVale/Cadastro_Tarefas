@@ -130,3 +130,5 @@ C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Web.UI\obj\Debug\SisTarefas.Web.UI.c
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Web.UI\obj\Debug\SisTarefas.Web.UI.csproj.CopyComplete
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Web.UI\obj\Debug\SisTarefas.Web.UI.dll
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Web.UI\obj\Debug\SisTarefas.Web.UI.pdb
+C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Web.UI\bin\Dapper.dll
+C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Web.UI\bin\Dapper.xml

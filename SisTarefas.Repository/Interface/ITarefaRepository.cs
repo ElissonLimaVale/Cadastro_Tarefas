@@ -12,6 +12,8 @@ namespace SisTarefas.Repository.Interface
         dynamic AddNotification(Notificacoes notific);
         List<string> ListarContatos();
         Tarefa BuscarTarefa(int id);
-        dynamic NotificationVerific(string usuario);
+        Tarefa BuscarTarefa(Tarefa tarefa);
+        dynamic NotificationVerific(int usuario);
+        Notificacoes BuscarNotification(string nome);
     }
 }

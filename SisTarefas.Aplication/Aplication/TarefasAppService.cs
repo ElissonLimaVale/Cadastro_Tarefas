@@ -40,10 +40,19 @@ namespace SisTarefas.Application
             return Mapper.Map<Tarefa, TarefaViewModel>(_repository.BuscarTarefa(id));
         }
 
-        public dynamic NotificationVerific(string usuario)
+        public dynamic NotificationVerific(int usuario)
         {
             return _repository.NotificationVerific(usuario);
         }
 
+        public NotificacoesViewModel BuscarNotification(string nome)
+        {
+            return Mapper.Map<Notificacoes, NotificacoesViewModel>(_repository.BuscarNotification(nome));
+        }
+
+        public TarefaViewModel BuscarTarefa(TarefaViewModel tarefa)
+        {
+            return Mapper.Map < Tarefa, TarefaViewModel > (_repository.BuscarTarefa(Mapper.Map<TarefaViewModel, Tarefa>(tarefa)));
+        }
     }
 }

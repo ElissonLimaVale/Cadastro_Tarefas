@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using SisAtividades.Models;
 using SisTarefas.Application.Models;
 using SisTarefas.Domain.Base;
 namespace SisTarefas.Aplication.AutoMapper

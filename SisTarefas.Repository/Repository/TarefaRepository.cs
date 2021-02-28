@@ -1,9 +1,11 @@
-﻿using SisTarefas.Domain.Base;
+﻿using Dapper;
+using SisTarefas.Domain.Base;
 using SisTarefas.Repository.Base;
 using SisTarefas.Repository.Context;
 using SisTarefas.Repository.Interface;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace SisTarefas.Repository
@@ -12,6 +14,7 @@ namespace SisTarefas.Repository
     {
         private readonly Conexao _conexao;
         private readonly CadastroTarefasContext _entity;
+        private SqlConnection _dapper;
         public TarefaRepository(Conexao conexao, CadastroTarefasContext entity)
         {
             _conexao = conexao;
@@ -25,6 +28,7 @@ namespace SisTarefas.Repository
             {
                 _entity.Tarefas.Add(tarefa);
                 _entity.SaveChanges();
+                
             }
             catch (Exception ex)
             {
@@ -84,15 +88,26 @@ namespace SisTarefas.Repository
             return _entity.Tarefas.FirstOrDefault(x => x.id == id);
         }
 
-        public dynamic NotificationVerific(string usuario)
+        public dynamic NotificationVerific(int usuario)
         {
             dynamic response;
+            _dapper = new SqlConnection(_conexao.getStringConection());
+            _dapper.Open();
             try
             {
+                var notification = _dapper.Query("TAREFAS_NOTIFICATION_VERIFY",
+                    new
+                    {
+                        @Usuario = usuario,
+                        @Data = DateTime.Now
+
+                    }, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+                bool data = notification.Count < 1 ? false : true;
                 response = new
                 {
-                    data = true,
-                    notification = _entity.Notificacoes.Select(x => x).Where(x => x.data <= DateTime.Now && x.nome == usuario)
+                    data = data,
+                    notification = notification
                 };
 
             }catch(Exception ex)
@@ -102,9 +117,22 @@ namespace SisTarefas.Repository
                     data = false,
                     notification = new Notificacoes()
                 };
+            }finally
+            {
+                _dapper.Close();
             }
             
             return response;
+        }
+
+        public Notificacoes BuscarNotification(string nome)
+        {
+            return  _entity.Notificacoes.FirstOrDefault(x => x.nome == nome);
+        }
+
+        public Tarefa BuscarTarefa(Tarefa tarefa)
+        {
+            return _entity.Tarefas.FirstOrDefault(x => x.impacto == tarefa.impacto && x.responsavel == tarefa.responsavel && x.contato == tarefa.contato);
         }
     }
 }

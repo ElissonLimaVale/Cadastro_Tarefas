@@ -1,5 +1,5 @@
 ﻿
-namespace SisAtividades.Models
+namespace SisTarefas.Application.Models
 {
     public class UsuarioViewModel
     {
@@ -19,6 +19,6 @@ namespace SisAtividades.Models
         public string email { get; set; }
         public string telefone { get; set; }
         public string senha { get; set; }
-
+        public virtual TarefaViewModel Tarefas { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿
 
 using SisTarefas.Domain.Base;
+using System.Collections.Generic;
 
 namespace SisTarefas.Repository.Interface
 {
@@ -10,5 +11,7 @@ namespace SisTarefas.Repository.Interface
         dynamic Atualizar(Usuario user);
         dynamic Deletar(Usuario user);
         Usuario Logar(Usuario user);
+        List<Usuario> ListarUsuarios();
+        Usuario BuscarUsuario(string nome);
     }
 }

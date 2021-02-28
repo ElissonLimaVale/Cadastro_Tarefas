@@ -19,5 +19,6 @@ namespace SisTarefas.Domain.Base
         public string email { get; set; }
         public string telefone { get; set; }
         public string senha { get; set; }
+        public virtual Tarefa Tarefa { get; set; }
     }
 }

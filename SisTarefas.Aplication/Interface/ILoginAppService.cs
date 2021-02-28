@@ -1,11 +1,8 @@
-﻿using SisAtividades.Models;
-using System;
+﻿
+using SisTarefas.Application.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SisAtividades.Interface
+namespace SisTarefas.Interface
 {
     public interface ILoginAppService
     {
@@ -13,5 +10,7 @@ namespace SisAtividades.Interface
         dynamic Atualizar(UsuarioViewModel user);
         dynamic Deletar(UsuarioViewModel user);
         UsuarioViewModel Logar(UsuarioViewModel user);
+        List<UsuarioViewModel> ListarUsuarios();
+        UsuarioViewModel BuscarUsuario(string nome);
     }
 }

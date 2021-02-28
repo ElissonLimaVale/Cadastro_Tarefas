@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 
 namespace SisTarefas.Application.Models
 {
@@ -8,8 +9,9 @@ namespace SisTarefas.Application.Models
         public string nome { get; set; }
         //public string tarefa { get; set; }
         public DateTime data { get; set; }
+        public DateTime dataconclusao { get; set; }
         public bool response { get; set; }
-        //public virtual TarefaViewModel Tarefa { get; set; }
+        public virtual TarefaViewModel Tarefa { get; set; }
 
     }
 }

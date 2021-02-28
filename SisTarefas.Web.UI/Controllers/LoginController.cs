@@ -1,9 +1,8 @@
 ﻿using FluentValidation.Results;
-using SisAtividades.Interface;
-using SisAtividades.Models;
-using SisAtividades.Models.Validation;
+using SisTarefas.Interface;
 using System.Web.Mvc;
-using SisTarefas.Web;
+using SisTarefas.Application.Models;
+using SisTarefas.Models.Validation;
 
 namespace SisTarefas.Web.UI.Controllers
 {
@@ -64,6 +63,7 @@ namespace SisTarefas.Web.UI.Controllers
                 {
                     Session["usuario"] = data.GetType().GetProperty("usuario").GetValue(data, null);
                     response = new { data = true, message = "Cadastrado! Aguarde, estamos redirecionando!" };
+                    //return RedirectToAction("Index","Tarefas");
                 }
                 else
                 {

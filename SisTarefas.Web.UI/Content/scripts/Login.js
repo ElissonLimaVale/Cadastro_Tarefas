@@ -29,18 +29,18 @@
                 url: "../Login/Logar",
                 data: UsuarioLogin
             }).done((data) => {
-                
+                Load.Hide();
                 if (data.data) {
-                    window.location.href = "/Tarefas/Index";
                     notific.success(data.message);
+                    window.location.href = "/Tarefas/Index";
+                    
                 } else {
                     notific.error(data.message);
                 }
-                Load.Hide();
                 
             }).fail(() => {
-                notific.error("Ops, Ocorreu um erro durante a requisição!");
                 Load.Hide();
+                notific.error("Ops, Ocorreu um erro durante a requisição!");
             });
         } else {
             notific.warning("Por favor preencha todos os campos!");

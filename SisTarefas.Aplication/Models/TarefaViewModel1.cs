@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 
 namespace SisTarefas.Application.Models
@@ -16,7 +17,8 @@ namespace SisTarefas.Application.Models
         public string descricao { get; set; }
         public string observacoes { get; set; }
         public string contato { get; set; }
-        public virtual ICollection<NotificacoesViewModel> notificacao { get; set; }
+        public virtual ICollection<NotificacoesViewModel> Notificacao { get; set; }
+        public virtual ICollection<UsuarioViewModel> Usuario { get; set; }
 
     }
 }

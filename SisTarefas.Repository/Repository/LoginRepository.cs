@@ -3,6 +3,7 @@ using SisTarefas.Repository.Base;
 using SisTarefas.Repository.Context;
 using SisTarefas.Repository.Interface;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SisTarefas.Repository.Repository
@@ -25,7 +26,7 @@ namespace SisTarefas.Repository.Repository
             try
             {
                 user.senha = BCrypt.Net.BCrypt.HashPassword(user.senha);
-                var registro = _entity.Usuario.FirstOrDefault(x => x.email == user.email);
+                var registro = _entity.Usuario.FirstOrDefault(x => x.email == user.email || x.nome == user.nome);
                 if(registro == null)
                 {
                     _entity.Usuario.Add(user);
@@ -100,6 +101,7 @@ namespace SisTarefas.Repository.Repository
                 {
                     if (BCrypt.Net.BCrypt.Verify(user.senha, registro.senha))
                     {
+                        response.id = registro.id;
                         response.nome = registro.nome;
                         response.email = registro.email;
                         response.telefone = registro.telefone;
@@ -118,6 +120,16 @@ namespace SisTarefas.Repository.Repository
             }
             
             return response;
+        }
+
+        public List<Usuario> ListarUsuarios()
+        {
+            return _entity.Usuario.Select(x => x).ToList();
+        }
+
+        public Usuario BuscarUsuario(string nome)
+        {
+            return _entity.Usuario.FirstOrDefault(x => x.nome == nome);
         }
     }
 }
