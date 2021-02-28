@@ -29,7 +29,11 @@ namespace SisTarefas.Repository.Mapping
             this.Property(x => x.contato).HasColumnType("VARCHAR");
             //this.Property(x => x.notificacoes).HasColumnType("INT");
             
-    }
+
+            //HasKey(x => x.Usuario)
+            //    .HasRequired(x => x.Usuario)
+            //    .WithRequiredDependent(x => x.id);
+        }
         
     }
 }

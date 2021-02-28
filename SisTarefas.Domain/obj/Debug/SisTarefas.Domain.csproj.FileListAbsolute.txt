@@ -27,3 +27,4 @@ C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Domain\obj\Debug\SisTarefas.Domain.c
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Domain\obj\Debug\SisTarefas.Domain.csproj.CopyComplete
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Domain\obj\Debug\SisTarefas.Domain.dll
 C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Domain\obj\Debug\SisTarefas.Domain.pdb
+C:\xampp\htdocs\Cadastro_Tarefas\SisTarefas.Domain\obj\Debug\SisTarefas.Domain.csprojAssemblyReference.cache

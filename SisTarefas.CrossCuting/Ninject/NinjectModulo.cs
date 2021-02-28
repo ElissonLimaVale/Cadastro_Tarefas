@@ -1,8 +1,8 @@
 ﻿using Ninject.Modules;
-using SisAtividades.Aplication;
-using SisAtividades.Interface;
+using SisTarefas.Aplication;
 using SisTarefas.Application;
 using SisTarefas.Application.Interface;
+using SisTarefas.Interface;
 using SisTarefas.Repository;
 using SisTarefas.Repository.Interface;
 using SisTarefas.Repository.Repository;

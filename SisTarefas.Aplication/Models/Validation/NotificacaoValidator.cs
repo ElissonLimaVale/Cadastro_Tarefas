@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using SisTarefas.Application.Models;
 
 namespace SisTarefas.Application.Models.Validators
 {

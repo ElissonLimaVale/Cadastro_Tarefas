@@ -1,11 +1,12 @@
 ﻿
 using FluentValidation.Results;
-using SisAtividades.Models;
+using SisTarefas.Interface;
 using SisTarefas.Application.Interface;
 using SisTarefas.Application.Models;
 using SisTarefas.Application.Models.Validators;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using System;
 
 namespace SisTarefas.WebUI.Controllers
 {
@@ -16,18 +17,20 @@ namespace SisTarefas.WebUI.Controllers
         private readonly TarefaValidator _tarefa;
         private readonly ContatoValidator _contato;
         private readonly NotificacaoValidator _notific;
+        private readonly ILoginAppService _log;
         private UsuarioViewModel _usuario;
         public TarefasController(ITarefasAppService appservice, 
                                 TarefaValidator tarefa,
                                 ContatoValidator contato,
-                                NotificacaoValidator notific
+                                NotificacaoValidator notific,
+                                ILoginAppService log
             )
         {
             _appservice = appservice;
             _tarefa = tarefa;
             _contato = contato;
             _notific = notific;
-
+            _log = log;
         }
 
         public ActionResult Index()
@@ -46,8 +49,9 @@ namespace SisTarefas.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult CadastrarTarefa(TarefaViewModel tarefa)
+        public ActionResult CadastrarTarefa(TarefaViewModel tarefa, List<UsuarioViewModel> contato)
         {
+            dynamic response;
             _usuario = Session["usuario"] as UsuarioViewModel;
             if (_usuario == null)
             {
@@ -55,8 +59,32 @@ namespace SisTarefas.WebUI.Controllers
             }
             //FluentValidation
             ValidationResult result = _tarefa.Validate(tarefa);
-            
-            dynamic response = result.IsValid ? _appservice.Cadastrar(tarefa) : new { data = false, message = result.ToString("") };
+            NotificacoesViewModel notific = new NotificacoesViewModel();
+            UsuarioViewModel user = new UsuarioViewModel();
+
+            if (result.IsValid)
+            {
+                response = _appservice.Cadastrar(tarefa);
+                tarefa = _appservice.BuscarTarefa(tarefa);
+
+                foreach (UsuarioViewModel item in contato)
+                {
+                    notific.nome = item.nome;
+                    notific.response = false;
+                    notific.data = DateTime.Now;
+                    notific.dataconclusao = tarefa.data_prevista;
+                    notific.Tarefa = tarefa;
+
+                    _appservice.AddNotification(notific);
+                    user = _log.BuscarUsuario(item.nome);
+                    user.Tarefas = tarefa;
+                    _log.Atualizar(user);
+                }
+                
+            }
+            else {
+                response = new { data = false, message = result.ToString("") };
+            }
             
             return Json(response);
         }
@@ -104,14 +132,18 @@ namespace SisTarefas.WebUI.Controllers
             return Json(response, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult NotificationVerific(string nome)
+        [HttpPost]
+        public ActionResult NotificationVerific()
         {
             _usuario = Session["usuario"] as UsuarioViewModel;
             if (_usuario == null)
             {
                 return RedirectToAction("Login", "Login");
             }
-            return _appservice.NotificationVerific(nome);
+
+            dynamic response = _appservice.NotificationVerific(_usuario.id);
+
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Error()
@@ -120,9 +152,9 @@ namespace SisTarefas.WebUI.Controllers
         }
 
         #region MÉTODOS QUE NÃO RETORNAM VIEW
-        public List<string> ListarContatos()
+        public List<UsuarioViewModel> ListarContatos()
         {
-            List<string> response = _appservice.ListarContatos();
+            List<UsuarioViewModel> response = _log.ListarUsuarios();//_appservice.ListarContatos();
 
             return response;
         }

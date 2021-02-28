@@ -1,6 +1,9 @@
-﻿@{
+﻿@using SisTarefas.Application.Models;
+@{
     Layout = null;
-    List<string> contatos = ViewBag.Contatos;
+
+    List<UsuarioViewModel> contatos = ViewBag.Contatos;
+    
 }
 
 <!DOCTYPE html>
@@ -14,10 +17,9 @@
     <script src="~/Content/scripts/Global.js"></script>
     <script src="~/Content/scripts/home.js"></script>
     <style>
-        
     </style>
 </head>
-<body onload="notification.Start(1000);">
+<body onload="notification.Verify();">
     <div class="widget-box">
         <div class="widget-header">
             <div class="widget-icon"></div>
@@ -81,10 +83,10 @@
             <div class="line"></div>
             <div class="simple-header">
                 <h3 class="sub-title">Notificados</h3>
-                <div class="content-button btn-header">
+                @*<div class="content-button btn-header">
                     <span class="btn icone-add"></span>
                     <button id="adicionar_contato" class="button-add input">Cadastrar</button>
-                </div>
+                </div>*@
             </div>
             <div class="formulario-exec">
                 <div class="formulario">
@@ -93,9 +95,10 @@
                             <select id="select-contato" name="contato" class="input-select">
                                 <option value="Selecionar">Seleconar um Contato</option>
                                 @{
-                                    foreach (string contato in contatos)
+                                    foreach (UsuarioViewModel contato in contatos)
                                     {
-                                        <option value="@contato">@contato</option>
+                                        <option id="@contato.id" value="@contato.nome">@contato.nome</option>
+                                        
                                     }
                                 }
                             </select>
@@ -106,12 +109,19 @@
                         </div>
                     </div>
                     <div class="form-content">
-                        <div class="content-select">
-                            <input name="add-contato-value" class=" input input-medio"/>
+                        <div id="items-users" class="content-select">
+                            @*<div class="item-user">
+                                    <div class="user-remove btn icone-fechar"></div>
+                                    username1
+                                </div>
+                                <div class="item-user">
+                                    <div class="user-remove btn icone-fechar"></div>
+                                    username2
+                                </div>*@
                         </div>
                         <div class="content-button">
                             <span class="btn icone-deletar"></span>
-                            <button id="remover-contato" class="input button-remove button">Remover</button>
+                            <button id="remover-contato" class="input button-remove button">Limpar</button>
                         </div>
                     </div>
                     <div class="form-content">
@@ -127,7 +137,7 @@
             </div>
         </div>
     </div>
-    
+
     <div id="cadastrar_contato">
         @Html.Partial("_PartialCadastrarContato")
     </div>

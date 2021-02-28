@@ -1,15 +1,11 @@
 ﻿using AutoMapper;
-using SisAtividades.Interface;
-using SisAtividades.Models;
+using SisTarefas.Interface;
+using SisTarefas.Application.Models;
 using SisTarefas.Domain.Base;
 using SisTarefas.Repository.Interface;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SisAtividades.Aplication
+namespace SisTarefas.Aplication
 {
     public class LoginAppService: ILoginAppService
     {
@@ -38,6 +34,16 @@ namespace SisAtividades.Aplication
         public UsuarioViewModel Logar(UsuarioViewModel user)
         {
              return Mapper.Map<Usuario, UsuarioViewModel>(_repository.Logar(Mapper.Map<UsuarioViewModel, Usuario>(user)));
+        }
+
+        public List<UsuarioViewModel> ListarUsuarios()
+        {
+            return Mapper.Map<List<Usuario>,List<UsuarioViewModel>>(_repository.ListarUsuarios());
+        }
+
+        public UsuarioViewModel BuscarUsuario(string nome)
+        {
+            return Mapper.Map<Usuario, UsuarioViewModel>(_repository.BuscarUsuario(nome));
         }
     }
 }

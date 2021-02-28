@@ -16,6 +16,8 @@ namespace SisTarefas.Domain.Base
         public string descricao { get; set; }
         public string observacoes { get; set; }
         public string contato { get; set; }
-        public virtual ICollection<Notificacoes> notificacao { get; set; }
+        public virtual ICollection<Notificacoes> Notificacao { get; set; }
+        public virtual ICollection<Usuario> Usuario { get; set; }
+
     }
 }

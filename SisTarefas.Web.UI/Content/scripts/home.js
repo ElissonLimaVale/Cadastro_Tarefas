@@ -1,11 +1,26 @@
 ﻿$(document).ready(() => {
+    //$.ajax({
+    //    method: "Post",
+    //    url: "../Tarefas/NotificationVerific"
+    //}).done((data) => {
+    //    if (data.data) {
+    //        this.Start();
+    //        this.AddItem(data.notification.nome, data.notification.id);
+    //    }
+    //}).fail(() => {
+    //    notific.warning("As notificações não serão atualizadas***");
+    //    this.Endverify();
+    //});
 
+    //Variaveis Gloabais
+    var UsersSelected = [];
     // Objeto Contato 
-    var contato = {
+    var contato = [{
+        id: null,
         nome: null,
         email: null,
         telefone: null
-    },
+    }],
         //Objeto tarefa
         tarefa = {
             data_prevista: null,
@@ -56,6 +71,8 @@
             }).done((data) => {
                 Load.Hide();
                 if (data.data) {
+                    $("#select-contato").append("<option value='" + contato.nome + "'>" + contato.nome + "</option>");
+                    UsersSelected = [];
                     notific.success(data.message);
                     ModalCadastro.Close();
                     //window.Location.href = "/";
@@ -73,6 +90,7 @@
 
     //Cadastrar Tarefa
     $("#salvar").click(() => {
+        contato = [];
         tarefa.data_prevista = $("input[name=data_prevista]").val();
         tarefa.data_conclusao = $("input[name=data_conclusao]").val();
         tarefa.area = $("input[name=area]").val();
@@ -82,15 +100,22 @@
         tarefa.responsavel = $("input[name=responsavel]").val();
         tarefa.descricao = $("textarea[name=descricao]").val();
         tarefa.observacoes = $("textarea[name=observacoes]").val();
-        tarefa.contato = $("input[name=add-contato-value]").val();
         tarefa.notificacao = $("input[name=notificacao]").val();
-
+        UsersSelected.forEach((data) => {
+            tarefa.contato = data;
+            contato.push({ id: null, nome: data, email: null, telefone: null, senha: null });
+        });
+            
+            
         if (Validate.JsonParams(tarefa, ["observacoes", "descricao", "notificacao"])) {
             Load.Show();
             $.ajax({
                 method: "Post",
                 url: "../Tarefas/CadastrarTarefa",
-                data: tarefa
+                data: {
+                    tarefa,
+                    contato
+                }
             }).done((data) => {
                 if (data.data) {
                     Load.Hide();
@@ -102,38 +127,52 @@
                 }
             }).fail(() => {
                 Load.Hide();
-                alert("Ops, Ocorreu um erro durante a requisição, por favor atualize a página!");
+                notific.error("Ops, Ocorreu um erro durante a requisição, por favor atualize a página!");
             })
         } else {
             notific.warning("Por favor preencha todos os campos obrigatorios **");
         }
+        
     });
 
 
     //metodos de interação de dados em tela
-    $("#adicionar-contato").click(() => {
-        if ($("#select-contato").val() != "Selecionar" && $("#select-contato").val() != "Selecionar Contato") {
-            $("input[name=add-contato-value]").val($("#select-contato").val());
-            //$("#select-contato").val("Selecionar Contato");
-        }
-    });
-
-    $("#remover-contato").click(() => {
-        $("input[name=add-contato-value]").val("");
-    });
-
-
-    //Notification
-    $("#notific-tarefa").click(() => {
-        if (notification.IsOpen()) {
-            notification.Close();
+    $("#adicionar-contato").on("click", function () {
+        let value = $("#select-contato").val();
+        
+        if (value != "Selecionar" && value != "Selecionar Contato") {
+            if (!UsersSelected.includes(value)) {
+                $("#items-users").append(
+                    "<div class='item-user'>" +
+                    "<div class='user-remove btn icone-fechar'></div>" +
+                    $("#select-contato").val() +
+                    "</div>"
+                );
+                $("#select-contato").val("Selecionar");
+                UsersSelected.push(value);
+            }
         } else {
-            notification.Open();
-            notification.Stop();
+            notific.warning("Selecione o contato para adicionar!");
         }
     });
-    $("#notific-exit").click(() => {
-        notification.Close();
+
+    $(document).on("click", ".user-remove", function () {
+        let item = $(this).parent();
+        $(item).hide(200);
+        setTimeout(() => {
+            $(item).remove();
+            UsersSelected.splice(UsersSelected.indexOf($(item).text().trim()));
+            console.log($(item).text().trim());
+        }, 200);
+        
+    });
+
+    $(document).on("click", "#remover-contato", function () {
+        $(".item-user").hide(200);
+        setTimeout(() => {
+            $(".item-user").remove();
+            UsersSelected = [];
+        },200);
     });
 
 

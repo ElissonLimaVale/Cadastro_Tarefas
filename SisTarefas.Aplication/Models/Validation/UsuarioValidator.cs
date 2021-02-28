@@ -1,9 +1,9 @@
 ﻿
 
 using FluentValidation;
-using System;
+using SisTarefas.Application.Models;
 
-namespace SisAtividades.Models.Validation
+namespace SisTarefas.Models.Validation
 {
     public class UsuarioValidator: AbstractValidator<UsuarioViewModel>
     {
